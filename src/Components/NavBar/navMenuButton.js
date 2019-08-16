@@ -23,7 +23,8 @@ export default class NavMenuButton extends React.Component {
 				height: '5vh',
 				width: '5vh',
 				display: 'flex',
-				margin: '0.5vh',
+				margin: '2px',
+				zIndex: 99
 			},
 			open: {
 				transform: 'rotate(540deg)',
@@ -34,14 +35,18 @@ export default class NavMenuButton extends React.Component {
 				transition: 'transform 200ms ease-in'
 			},
 			hovering: {
+				opacity: 1,
 				backgroundColor: 'rgba(151, 210, 251, 0.6)',
-				boxShadow: '0 0px 16px 2px rgba(0,0,0,0.24), 0 0px 50px 5px rgba(0,0,0,0.19)',
-				transition: 'background-color 200ms ease-out, font-size 100ms linear, box-shadow 100ms ease-out'
+				boxShadow:
+					'0 0px 16px 2px rgba(0,0,0,0.24), 0 0px 50px 5px rgba(0,0,0,0.19)',
+				transition:
+					'background-color 200ms ease-out, font-size 100ms linear, box-shadow 100ms ease-out, opacity 200ms ease-out'
 			},
 			notHovering: {
+				opacity: 0.75,
 				backgroundColor: 'rgba(255, 252, 252, 0)',
 				transition:
-					'background-color 200ms ease-out, font-size 200ms linear'
+					'background-color 200ms ease-out, font-size 200ms linear, opacity 200ms ease-out'
 			},
 			navIcon: {
 				display: 'flex',
@@ -78,16 +83,16 @@ export default class NavMenuButton extends React.Component {
 						<img
 							style={{ opacity: 0.9 }}
 							src={Arrow}
-							height='100%'
-							width='100%'
+							height="100%"
+							width="100%"
 							alt="arrow"
 						/>
 					) : (
 						<img
 							style={{ opacity: 0.9 }}
 							src={Hamburger}
-							height='100%'
-							width='100%'
+							height="100%"
+							width="100%"
 							alt="arrow"
 						/>
 					)}

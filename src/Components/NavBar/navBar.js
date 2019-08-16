@@ -20,12 +20,25 @@ export default class NavBar extends React.Component {
 
 	render() {
 		return (
-			<div className="navMenu">
+			<div
+				className="navMenu"
+				style={{
+					zIndex: 99,
+					position: 'fixed',
+					padding: 0,
+					margin: 0,
+					userSelect: 'none'
+				}}
+			>
 				<NavMenuButton
 					handleClick={this.toggleNavBar}
 					navBarOpen={this.state.navBarOpen}
 				/>
-				<NavMenu handleClick={this.toggleNavBar} navBarOpen={this.state.navBarOpen}/>
+				<NavMenu
+					handleClick={this.toggleNavBar}
+					navBarOpen={this.state.navBarOpen}
+					handlePageChange={this.props.handlePageChange}
+				/>
 			</div>
 		);
 	}
