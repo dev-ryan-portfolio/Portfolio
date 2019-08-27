@@ -69,6 +69,20 @@ export default class Hangman extends React.Component {
 		const styles = {
 			winMessage: {
 				textAlign: 'center'
+			},
+			button: {
+				margin: 5,
+				height: '3vh',
+				width: '10vw',
+				background: 'rgba(246, 246, 246, 1)',
+				border: '1px solid black',
+				outline: 'none',
+				boxShadow:
+					'0px 1px 2px 1px rgba(0,0,0,0.2), 0px 1px 4px 2px rgba(0,0,0,0.15)',
+				cursor: 'pointer',
+				fontWeight: 800,
+				fontFamily: 'Open Sans',
+				color: 'rgba(0, 138, 250, 1)'
 			}
 		};
 
@@ -89,7 +103,10 @@ export default class Hangman extends React.Component {
 					win={this.state.win}
 				/>
 				<div style={{ display: 'flex', justifyContent: 'center' }}>
-					<button onClick={() => this.resetState()}>
+					<button
+						onClick={() => this.resetState()}
+						style={styles.button}
+					>
 						Reset Game
 					</button>
 					{this.state.win === true ? (

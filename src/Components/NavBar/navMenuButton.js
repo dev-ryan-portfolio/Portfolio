@@ -1,6 +1,6 @@
 import React from 'react';
 import Arrow from '../../Icons/Arrow.png';
-import Hamburger from '../../Icons/Hamburger Icon.png';
+import Hamburger from '../../Icons/Hamburger Icon.svg';
 
 export default class NavMenuButton extends React.Component {
 	constructor(props) {
@@ -23,8 +23,9 @@ export default class NavMenuButton extends React.Component {
 				height: '5vh',
 				width: '5vh',
 				display: 'flex',
-				margin: '2px',
-				zIndex: 99
+				opacity: 1,
+				zIndex: 99,
+				margin: '5px 0px 0px 5px'
 			},
 			open: {
 				transform: 'rotate(540deg)',
@@ -35,18 +36,16 @@ export default class NavMenuButton extends React.Component {
 				transition: 'transform 200ms ease-in'
 			},
 			hovering: {
-				opacity: 1,
-				backgroundColor: 'rgba(151, 210, 251, 0.6)',
+				backgroundColor: 'rgba(151, 210, 251, 0.8)',
 				boxShadow:
 					'0 0px 16px 2px rgba(0,0,0,0.24), 0 0px 50px 5px rgba(0,0,0,0.19)',
 				transition:
-					'background-color 200ms ease-out, font-size 100ms linear, box-shadow 100ms ease-out, opacity 200ms ease-out'
+					'background-color 200ms ease-out, box-shadow 100ms ease-out'
 			},
 			notHovering: {
-				opacity: 0.75,
-				backgroundColor: 'rgba(255, 252, 252, 0)',
+				backgroundColor: 'rgba(151, 210, 251, 0.4)',
 				transition:
-					'background-color 200ms ease-out, font-size 200ms linear, opacity 200ms ease-out'
+					'background-color 200ms ease-out, box-shadow 100ms ease-out'
 			},
 			navIcon: {
 				display: 'flex',
@@ -70,6 +69,11 @@ export default class NavMenuButton extends React.Component {
 				}
 				onMouseEnter={() => this.setState({ hovering: true })}
 				onMouseLeave={() => this.setState({ hovering: false })}
+				title={
+					this.props.navBarOpen
+						? 'Close Navigation'
+						: 'Open Navigation'
+				}
 			>
 				<button
 					onClick={this.props.handleClick}
@@ -85,7 +89,7 @@ export default class NavMenuButton extends React.Component {
 							src={Arrow}
 							height="100%"
 							width="100%"
-							alt="arrow"
+							alt="close nav bar"
 						/>
 					) : (
 						<img
@@ -93,7 +97,7 @@ export default class NavMenuButton extends React.Component {
 							src={Hamburger}
 							height="100%"
 							width="100%"
-							alt="arrow"
+							alt="open nav bar"
 						/>
 					)}
 				</button>

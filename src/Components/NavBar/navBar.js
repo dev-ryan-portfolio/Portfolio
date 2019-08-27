@@ -37,8 +37,9 @@ export default class NavBar extends React.Component {
 				<NavMenu
 					handleClick={this.toggleNavBar}
 					navBarOpen={this.state.navBarOpen}
-					handlePageChange={this.props.handlePageChange}
-				/>
+				>
+					{this.props.children}
+				</NavMenu>
 			</div>
 		);
 	}
