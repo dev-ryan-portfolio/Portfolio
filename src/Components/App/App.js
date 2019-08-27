@@ -6,7 +6,6 @@ import Home from '../Home/home.js';
 import GitHub from '../../Icons/github-mark.svg';
 import Linkedin from '../../Icons/linkedin.png';
 import Gmail from '../../Icons/gmail.svg';
-import Hangman from '../Hangman/hangmanSelector/hangmanSelector.js';
 import About from '../AboutMe/aboutMe.js';
 import Contact from '../Contact/contact.js';
 import Resume from '../../PDF/Resume.pdf';
@@ -98,7 +97,6 @@ export default function App() {
 			<Route path="/about-me" component={About} />
 			<Route path="/Resume" component={Home} />
 			<Route path="/contact" component={Contact} />
-			<Route path="/hangman" component={Hangman} />
 		</Switch>
 	);
 }

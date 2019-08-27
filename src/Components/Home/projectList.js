@@ -69,7 +69,7 @@ export default function ProjectCard(props) {
 		</div>
 	);
 
-	const linkList = props.hosted ? (
+	const linkList = props.local ? (
 		<Link
 			style={{ textDecoration: 'none', margin: '2.5% 2.5% 0 2.5%', width: '95%' }}
 			to={props.link}
