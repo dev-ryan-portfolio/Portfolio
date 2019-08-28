@@ -67,7 +67,7 @@ export default function App() {
 		</div>
 	);
 	return (
-		<Switch>
+		<Switch basename={process.env.PUBLIC_URL}>
 			<NavBar>
 				<Link style={styles.childrenText} to="/#title">
 					Home
