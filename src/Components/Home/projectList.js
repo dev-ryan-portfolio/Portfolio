@@ -62,7 +62,7 @@ export default function ProjectCard(props) {
 			position: 'absolute',
 			right: 0,
 			bottom: 0,
-			padding: '0px 15px 1.5% 0px',
+			padding: '0px 15px 1.2% 0px',
 			display: 'flex',
 			flexWrap: 'wrap',
 			minWidth: '32px',
@@ -82,6 +82,7 @@ export default function ProjectCard(props) {
 		},
 		listWrapper: {
 			position: 'relative',
+			padding: 2,
 			margin: '2.5% 2% 1% 2.5%',
 			width: '95%'
 		}
@@ -90,7 +91,7 @@ export default function ProjectCard(props) {
 	const icons = (
 		<div style={styles.icons}>
 			<a
-				style={{ padding: 2 }}
+				style={{ padding: 5 }}
 				href={props.demo && props.demo}
 				target="_self"
 				rel="noopener noreferrer"
@@ -119,7 +120,7 @@ export default function ProjectCard(props) {
 				/>
 			</a>
 			<a
-				style={{ padding: 2 }}
+				style={{ padding: 5 }}
 				href={props.repo && props.repo}
 				target="_blank"
 				rel="noopener noreferrer"

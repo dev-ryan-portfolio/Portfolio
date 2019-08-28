@@ -96,7 +96,8 @@ export default function ProjectCard(props) {
 		cardWrapper: {
 			position: 'relative',
 			textDecoration: 'none',
-			margin: 10
+			margin: 10,
+			padding: 2
 		}
 	};
 
