@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeBackground from '../../Images/CodeBackground.png';
+import CodeBackground from '../../Images/CodeBackground.jpg';
 import DownIcon from '../../Icons/downIconGold.svg';
 
 export default function LandingScreen() {

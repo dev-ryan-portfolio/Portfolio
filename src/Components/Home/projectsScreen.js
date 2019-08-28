@@ -8,7 +8,7 @@ import ProjectList from './projectList.js';
 export default function LandingScreen() {
 	const [hoveringCard, setHoveringCard] = useState(false);
 	const [hoveringList, setHoveringList] = useState(false);
-	const [view, setView] = useState('list');
+	const [view, setView] = useState('card');
 
 	const styles = {
 		background: {
@@ -28,7 +28,7 @@ export default function LandingScreen() {
 			padding: '5px',
 			overflow: 'auto',
 			maxHeight: '82%',
-			maxWidth: '80%',
+			width: '80%',
 			justifyContent: 'center',
 			borderRadius: 15,
 			border: '2px solid rgba(0,0,0, .05)'
@@ -60,7 +60,8 @@ export default function LandingScreen() {
 			height: '3vmax',
 			width: '3vmax',
 			padding: '10px 10px 10px 10px',
-			borderRadius: '100%'
+			borderRadius: '100%',
+			userSelect: 'none'
 		},
 		hovering: {
 			backgroundColor: 'rgba(0, 0, 0, 0.15)',
@@ -116,17 +117,19 @@ export default function LandingScreen() {
 			<ProjectCard
 				key={index}
 				image={props.image}
+				alt={props.alt}
 				description={props.description}
-				hosted={props.hosted}
 				link={props.link}
+				repo={props.repo}
 			/>
 		) : (
 			<ProjectList
 				key={index}
 				image={props.image}
+				alt={props.alt}
 				description={props.description}
-				hosted={props.hosted}
 				link={props.link}
+				repo={props.repo}
 			/>
 		)
 	);

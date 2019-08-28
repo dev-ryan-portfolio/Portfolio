@@ -1,6 +1,6 @@
 {
 	"homepage": "https://ryancallahan312.github.io/Portfolio/",
-	"name": "react-hangman",
+	"name": "portfolio",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
