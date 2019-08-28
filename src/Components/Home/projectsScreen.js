@@ -119,7 +119,7 @@ export default function LandingScreen() {
 				image={props.image}
 				alt={props.alt}
 				description={props.description}
-				link={props.link}
+				demo={props.demo}
 				repo={props.repo}
 			/>
 		) : (
@@ -128,7 +128,7 @@ export default function LandingScreen() {
 				image={props.image}
 				alt={props.alt}
 				description={props.description}
-				link={props.link}
+				demo={props.demo}
 				repo={props.repo}
 			/>
 		)

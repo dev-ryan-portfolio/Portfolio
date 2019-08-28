@@ -3,14 +3,14 @@
 		"image": "Hangman.png",
 		"alt": "Hangman Example Image",
 		"description": "A hangman game created with react that can be played as the one guessing the word or the one thinking of the word",
-		"link": "https://ryancallahan312.github.io/React-Hangman/",
+		"demo": "https://ryancallahan312.github.io/React-Hangman/",
 		"repo": "https://github.com/RyanCallahan312/React-Hangman"
 	},
 	{
 		"image": "Hangman.png",
 		"alt": "Hangman Example Image",
 		"description": "A hangman game created with react that can be played as the one guessing the word or the one thinking of the word",
-		"link": null,
+		"demo": null,
 		"repo": null
 	}
 ]

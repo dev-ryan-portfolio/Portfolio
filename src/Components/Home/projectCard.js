@@ -4,11 +4,12 @@ import NoView from '../../Icons/no-eye-white.svg';
 import GitBranch from '../../Icons/git-white.svg';
 
 export default function ProjectCard(props) {
-	const [hovering, setHovering] = useState(false);
+	const [hoveringCard, setHoveringCard] = useState(false);
+	const [hoveringDemo, setHoveringDemo] = useState(false);
+	const [hoveringRepo, setHoveringRepo] = useState(false);
 
 	const styles = {
 		project: {
-			margin: 10,
 			boxShadow:
 				'-2px 2px 7px rgba(0,0,0,0.24), -4px 4px 9px rgba(0,0,0,0.19)',
 			backgroundImage: `url('${require('../../Images/' + props.image)}')`,
@@ -37,15 +38,14 @@ export default function ProjectCard(props) {
 			fontSize: 'calc(0.3em + 1vw + 8px)',
 			overflow: 'hidden',
 			height: '78%'
-			
 		},
-		hovering: {
+		hoveringCard: {
 			transform: 'scale(1.02)',
 			boxShadow:
 				'0px 0px 9px 5px rgba(0,0,0,0.4), 0px 0px 13px 10px rgba(0,0,0,0.3)',
 			transition: 'transform 150ms linear, box-shadow 300ms'
 		},
-		notHovering: {
+		notHoveringCard: {
 			transform: 'scale(1)',
 			boxShadow:
 				'0px 0px 7px 2px rgba(0,0,0,0.24), 0px 0px 9px 4px rgba(0,0,0,0.19)',
@@ -54,13 +54,16 @@ export default function ProjectCard(props) {
 		},
 		icon: {
 			flexGrow: 1,
-			margin: '0 10px 0 10px',
+			margin: '0 5px 0 10px',
 			minWidth: '32px',
 			maxWidth: '48px',
 			height: '10%',
 			minHeight: '32px',
 			maxHeight: '48px',
-			userSelect: 'none'
+			userSelect: 'none',
+			padding: 5,
+			border: 'none',
+			borderRadius: '100%'
 		},
 		iconActive: {
 			cursor: 'pointer',
@@ -71,36 +74,63 @@ export default function ProjectCard(props) {
 			opacity: 0.5
 		},
 		icons: {
-			width: '95%',
-			height:'22%',
-			margin: '5px 10px 5px 10px',
+			position: 'absolute',
+			bottom: 0,
+			right: '1%',
+			width: '100%',
+			margin: '0px 2% 0px 0px',
+			padding: '0px 2px 0px 0px',
+			height: 'auto',
 			display: 'flex',
 			justifyContent: 'flex-end',
-			minWidth: '32px',
+			minWidth: '32px'
+		},
+		hoveringIcon: {
+			backgroundColor: 'rgba(244,244,244,0.24)',
+			transition: 'background-color 200ms linear'
+		},
+		notHoveringIcon: {
+			backgroundColor: 'rgba(255,255,255,0)',
+			transition: 'background-color 200ms linear'
+		},
+		cardWrapper: {
+			position: 'relative',
+			textDecoration: 'none',
+			margin: 10
 		}
 	};
 
 	const icons = (
 		<div style={styles.icons}>
 			<a
-				style={{ padding: 2 }}
-				href={props.link && props.link}
+				href={props.demo && props.demo}
 				target="_self"
 				rel="noopener noreferrer"
 			>
 				<img
 					style={
-						props.link
-							? { ...styles.icon, ...styles.iconActive }
+						props.demo
+							? hoveringDemo
+								? {
+										...styles.icon,
+										...styles.iconActive,
+										...styles.hoveringIcon
+								  }
+								: {
+										...styles.icon,
+										...styles.iconActive,
+										...styles.notHoveringIcon
+								  }
 							: { ...styles.icon, ...styles.iconDisabled }
 					}
-					src={props.link ? View : NoView}
-					alt={props.link ? 'View Project' : 'No Demo Available'}
-					title={props.link ? 'View Project' : 'No Demo Available'}
+					onMouseEnter={props.demo && (() => setHoveringDemo(true))}
+					onMouseLeave={props.demo && (() => setHoveringDemo(false))}
+					src={props.demo ? View : NoView}
+					alt={props.demo ? 'View Project' : 'No Demo Available'}
+					title={props.demo ? 'View Project' : 'No Demo Available'}
 				/>
 			</a>
 			<a
-				style={{ padding: 2 }}
 				href={props.repo && props.repo}
 				target="_blank"
 				rel="noopener noreferrer"
@@ -108,9 +138,21 @@ export default function ProjectCard(props) {
 				<img
 					style={
 						props.repo
-							? { ...styles.icon, ...styles.iconActive }
+							? hoveringRepo
+								? {
+										...styles.icon,
+										...styles.iconActive,
+										...styles.hoveringIcon
+								  }
+								: {
+										...styles.icon,
+										...styles.iconActive,
+										...styles.notHoveringIcon
+								  }
 							: { ...styles.icon, ...styles.iconDisabled }
 					}
+					onMouseEnter={props.repo && (() => setHoveringRepo(true))}
+					onMouseLeave={props.repo && (() => setHoveringRepo(false))}
 					src={GitBranch}
 					alt={props.repo ? 'View Repo' : 'No Repo Available'}
 					title={props.repo ? 'View Repo' : 'No Repo Available'}
@@ -120,35 +162,37 @@ export default function ProjectCard(props) {
 	);
 
 	const card = (
-		<div
-			style={
-				hovering
-					? { ...styles.project, ...styles.hovering }
-					: { ...styles.project, ...styles.notHovering }
-			}
-			onMouseEnter={
-				(props.link !== null) | (props.repo !== null) &&
-				(() => setHovering(true))
-			}
-			onMouseLeave={
-				(props.link !== null) | (props.repo !== null) &&
-				(() => setHovering(false))
-			}
-		>
+		<div style={styles.project}>
 			<div style={styles.descriptionBackground}>
 				<h1 style={styles.description}>{props.description}</h1>
-				{icons}
 			</div>
 		</div>
 	);
 
 	const linkCard = (
-		<a
-			style={{ textDecoration: 'none' }}
-			href={props.link ? props.link : props.repo && props.repo}
+		<div
+			style={
+				hoveringCard || hoveringDemo || hoveringRepo
+					? { ...styles.cardWrapper, ...styles.hoveringCard }
+					: { ...styles.cardWrapper, ...styles.notHoveringCard }
+			}
+			onMouseEnter={
+				props.demo !== null || props.repo !== null
+					? () => setHoveringCard(true)
+					: null
+			}
+			onMouseLeave={
+				props.demo !== null || props.repo !== null
+					? () => setHoveringCard(false)
+					: null
+			}
 		>
-			{card}
-		</a>
+			<a href={props.demo ? props.demo : props.repo && props.repo}>
+				{card}
+			</a>
+
+			{icons}
+		</div>
 	);
 
 	return linkCard;

@@ -17,13 +17,13 @@ export default function ProjectCard(props) {
 			height: '115px',
 			width: '100%'
 		},
-		hovering: {
+		hoveringList: {
 			transform: 'scale(1.02)',
 			boxShadow:
 				'0px 0px 9px 5px rgba(0,0,0,0.4), 0px 0px 13px 10px rgba(0,0,0,0.3)',
 			transition: 'transform 150ms linear, box-shadow 300ms'
 		},
-		notHovering: {
+		notHoveringList: {
 			transform: 'scale(1)',
 			boxShadow:
 				'0px 0px 7px 2px rgba(0,0,0,0.24), 0px 0px 9px 4px rgba(0,0,0,0.19)',
@@ -59,36 +59,63 @@ export default function ProjectCard(props) {
 			opacity: 0.5
 		},
 		icons: {
-			margin: '15px 10px 10px 10px',
+			position: 'absolute',
+			right: 0,
+			bottom: 0,
+			padding: '0px 15px 1.5% 0px',
 			display: 'flex',
 			flexWrap: 'wrap',
 			minWidth: '32px',
 			width: '2%',
 			maxWidth: '64px'
 		},
+		hoveringIcon: {
+			transform: 'scale(1.25)',
+			transition: 'transform 150ms ease-in'
+		},
+		notHoveringIcon: {
+			transform: 'scale(1.00)',
+			transition: 'transform 200ms linear'
+		},
 		link: {
-			textDecoration: 'none',
+			textDecoration: 'none'
+		},
+		listWrapper: {
+			position: 'relative',
 			margin: '2.5% 2% 1% 2.5%',
 			width: '95%'
 		}
 	};
+
 	const icons = (
 		<div style={styles.icons}>
 			<a
 				style={{ padding: 2 }}
-				href={props.link && props.link}
+				href={props.demo && props.demo}
 				target="_self"
 				rel="noopener noreferrer"
 			>
 				<img
 					style={
-						props.link
-							? { ...styles.icon, ...styles.iconActive }
+						props.demo
+							? hoveringDemo
+								? {
+										...styles.icon,
+										...styles.iconActive,
+										...styles.hoveringIcon
+								  }
+								: {
+										...styles.icon,
+										...styles.iconActive,
+										...styles.notHoveringIcon
+								  }
 							: { ...styles.icon, ...styles.iconDisabled }
 					}
-					src={props.link ? View : NoView}
-					alt={props.link ? 'View Project' : 'No Demo Available'}
-					title={props.link ? 'View Project' : 'No Demo Available'}
+					onMouseEnter={props.demo && (() => setHoveringDemo(true))}
+					onMouseLeave={props.demo && (() => setHoveringDemo(false))}
+					src={props.demo ? View : NoView}
+					alt={props.demo ? 'View Project' : 'No Demo Available'}
+					title={props.demo ? 'View Project' : 'No Demo Available'}
 				/>
 			</a>
 			<a
@@ -100,9 +127,21 @@ export default function ProjectCard(props) {
 				<img
 					style={
 						props.repo
-							? { ...styles.icon, ...styles.iconActive }
+							? hoveringRepo
+								? {
+										...styles.icon,
+										...styles.iconActive,
+										...styles.hoveringIcon
+								  }
+								: {
+										...styles.icon,
+										...styles.iconActive,
+										...styles.notHoveringIcon
+								  }
 							: { ...styles.icon, ...styles.iconDisabled }
 					}
+					onMouseEnter={props.repo && (() => setHoveringRepo(true))}
+					onMouseLeave={props.repo && (() => setHoveringRepo(false))}
 					src={GitBranch}
 					alt={props.repo ? 'View Repo' : 'No Repo Available'}
 					title={props.repo ? 'View Repo' : 'No Repo Available'}
@@ -126,33 +165,50 @@ export default function ProjectCard(props) {
 
 	const list = (
 		<div
-			style={
-				hoveringList
-					? { ...styles.project, ...styles.hovering }
-					: { ...styles.project, ...styles.notHovering }
-			}
+			style={styles.project}
 			onMouseEnter={
-				(props.link !== null) | (props.repo !== null) &&
-				(() => setHoveringList(true))
+				props.demo !== null || props.repo !== null
+					? () => setHoveringList(true)
+					: null
 			}
 			onMouseLeave={
-				(props.link !== null) | (props.repo !== null) &&
-				(() => setHoveringList(false))
+				props.demo !== null || props.repo !== null
+					? () => setHoveringList(false)
+					: null
 			}
 		>
 			{image}
 			{description}
-			{icons}
 		</div>
 	);
 
 	const linkList = (
-		<a
-			style={styles.link}
-			href={props.link ? props.link : props.repo && props.repo}
+		<div
+			style={
+				hoveringList || hoveringDemo || hoveringRepo
+					? { ...styles.listWrapper, ...styles.hoveringList }
+					: { ...styles.listWrapper, ...styles.notHoveringList }
+			}
+			onMouseEnter={
+				props.demo !== null || props.repo !== null
+					? () => setHoveringList(true)
+					: null
+			}
+			onMouseLeave={
+				props.demo !== null || props.repo !== null
+					? () => setHoveringList(false)
+					: null
+			}
 		>
-			{list}
-		</a>
+			<a
+				style={styles.link}
+				href={props.demo ? props.demo : props.repo && props.repo}
+			>
+				{list}
+			</a>
+
+			{icons}
+		</div>
 	);
 
 	return linkList;
