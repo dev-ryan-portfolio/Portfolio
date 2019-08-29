@@ -1,11 +1,24 @@
 import React from 'react';
+import { sendMail } from '../../Api/mailer.js';
+import htmlEscape from '../../Util/htmlEscape.js';
 
 export default class Contact extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			validation: {}
+			validation: {
+				name: null,
+				email: null,
+				subject: null,
+				message: null
+			},
+			value: {
+				name: null,
+				email: null,
+				subject: null,
+				message: null
+			}
 		};
 		this.validateField = this.validateField.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,13 +31,13 @@ export default class Contact extends React.Component {
 		if (value) {
 			switch (field) {
 				case 'name':
-					valid = value.match(
-						/(-?([A-Z].\s)?([A-Z]+)\s?)+([A-Z]'([A-Z]+))?/gi
+					valid = /(-?([A-Z].\s)?([A-Z]+)\s?)+([A-Z]'([A-Z]+))?/gi.test(
+						value
 					);
 					break;
 				case 'email':
-					valid = value.match(
-						/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
+					valid = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi.test(
+						value
 					);
 					break;
 				default:
@@ -35,13 +48,37 @@ export default class Contact extends React.Component {
 			validation: {
 				...this.state.validation,
 				[field]: valid
+			},
+			value: {
+				...this.state.value,
+				[field]: value
 			}
 		});
 	}
 
-	handleSubmit(e) {
-		e.preventDefalit();
-		console.log(e.target);
+	async handleSubmit(e) {
+		e.preventDefault();
+		if (Object.values(this.state.validation).every(e => e === true)) {
+			sendMail({
+				from: '"Portfolio Contact Form" <mailer.service2@gmail.com>',
+				to: 'RyanCallahan312@gmail.com',
+				subject: `Portfolio Contact Form: ${this.state.value.subject}`,
+				text: `From: ${this.state.value.name} at ${
+					this.state.value.email
+				}\nSubject: ${this.state.value.subject}\nMessage: ${
+					this.state.value.message
+				}`,
+				html: `
+				<h1><u>Contact Details</u></h1>
+				<ul>
+				<li>Name: ${htmlEscape(this.state.value.name)}</li>
+				<li>Email: ${htmlEscape(this.state.value.email)}</li>
+				</ul>
+				<h1><u>Message</u></h1>
+				<h3>${htmlEscape(this.state.value.subject)}</h3>
+				<p>${htmlEscape(this.state.value.message)}</p>`
+			});
+		}
 	}
 
 	render() {
