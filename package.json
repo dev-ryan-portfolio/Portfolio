@@ -3,7 +3,6 @@
 	"name": "portfolio",
 	"version": "0.1.0",
 	"private": true,
-	"proxy": "https://contact-mailer-service.herokuapp.com/",
 	"dependencies": {
 		"axios": "^0.19.0",
 		"react": "^16.8.6",

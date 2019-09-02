@@ -166,7 +166,6 @@ export default class Contact extends React.Component {
         <div style={styles.inputContainer}>
           <input style={styles.inputSubmit} type="submit" value="submit" />
         </div>
-        <p>hahhahhhhah</p>
       </form>
     );
   }
