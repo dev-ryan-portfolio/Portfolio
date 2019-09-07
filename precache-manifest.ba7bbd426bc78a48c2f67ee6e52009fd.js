@@ -1,23 +1,39 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "104632755fa71f9f56ba2ee5fedfdb56",
+    "revision": "cf16869501a0cb29830a3be92eb0055f",
     "url": "/Portfolio/index.html"
   },
   {
-    "revision": "3392caf11e044f2010f3",
-    "url": "/Portfolio/static/js/2.8421df5b.chunk.js"
+    "revision": "eeb592e9e9f19c0b288c",
+    "url": "/Portfolio/static/js/2.7f632720.chunk.js"
   },
   {
-    "revision": "88f1540903709e95ec86",
-    "url": "/Portfolio/static/js/main.91c9aeb8.chunk.js"
+    "revision": "9ef727ac9fb7507b29ce",
+    "url": "/Portfolio/static/js/main.d27fb1dd.chunk.js"
   },
   {
     "revision": "6b64d540f1308ee928ad",
     "url": "/Portfolio/static/js/runtime~main.132fbc8c.js"
   },
   {
+    "revision": "61042f710acf4827f7e9a623397bda3f",
+    "url": "/Portfolio/static/media/AddressBook.61042f71.jpg"
+  },
+  {
+    "revision": "a6de944cea995232d09b2bf3633a539e",
+    "url": "/Portfolio/static/media/AddressBook.a6de944c.jpg"
+  },
+  {
     "revision": "97ae6dfe55454182e8d08e1a5939f0f2",
     "url": "/Portfolio/static/media/Arrow.97ae6dfe.png"
+  },
+  {
+    "revision": "6ad26873522b8413e71ed97c80e75da3",
+    "url": "/Portfolio/static/media/Blackjack.6ad26873.jpg"
+  },
+  {
+    "revision": "ca278ade6f6aa221f2f665a32faddf8f",
+    "url": "/Portfolio/static/media/Blackjack.ca278ade.jpg"
   },
   {
     "revision": "4f035da58fffcb3a98d7e7fd081ab578",
@@ -32,8 +48,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Portfolio/static/media/Hamburger Icon.86595150.svg"
   },
   {
-    "revision": "1ae34949ff98cdf92fec46a976a90b5f",
-    "url": "/Portfolio/static/media/Hangman.1ae34949.png"
+    "revision": "b14145d03c413d0703afe00327c32067",
+    "url": "/Portfolio/static/media/LibraryShelf.b14145d0.jpg"
+  },
+  {
+    "revision": "d1e98c7ab4f185531cf4829349155ea8",
+    "url": "/Portfolio/static/media/LibraryShelf.d1e98c7a.jpg"
   },
   {
     "revision": "f7c64f1cf93237a25d4877aef4847e87",
