@@ -35,7 +35,7 @@ export default function ProjectCard(props) {
         description: {
             margin: 0,
             color: "rgba(250, 250, 250, .98)",
-            fontSize: "calc(0.3em + 1vw + 8px)",
+            fontSize: "calc(1vw + 8px)",
             overflow: "hidden",
             height: "78%"
         },

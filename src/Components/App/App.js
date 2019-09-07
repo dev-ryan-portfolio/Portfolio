@@ -6,7 +6,6 @@ import Home from "../Home/home.js";
 import GitHub from "../../Icons/github-mark.svg";
 import Linkedin from "../../Icons/linkedin.png";
 import Gmail from "../../Icons/gmail.svg";
-import About from "../AboutMe/aboutMe.js";
 import Contact from "../Contact/contact.js";
 import Resume from "../../PDF/Resume.pdf";
 import Snackbar from "../Snackbars/Snackbars.js";
@@ -102,9 +101,6 @@ export default function App() {
                     >
                         Resume
                     </a>
-                    <Link style={styles.childrenText} to="/about-me">
-                        About Me
-                    </Link>
                     <Link style={styles.childrenText} to="/contact">
                         Contact
                     </Link>
@@ -123,10 +119,6 @@ export default function App() {
                 <Route
                     path="/#projects"
                     component={() => <Home addSnackbar={addSnackbar} />}
-                />
-                <Route
-                    path="/about-me"
-                    component={() => <About addSnackbar={addSnackbar} />}
                 />
                 <Route
                     path="/contact"

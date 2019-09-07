@@ -13,7 +13,7 @@ export default function ProjectCard(props) {
             display: "flex",
             boxShadow:
                 "-2px 2px 7px rgba(0,0,0,0.24), -4px 4px 9px rgba(0,0,0,0.19)",
-            overflow: "hidden",
+            overflow: "auto",
             height: "115px",
             width: "100%"
         },
@@ -33,7 +33,9 @@ export default function ProjectCard(props) {
         image: {
             marginRight: "5px",
             maxWidth: "10%",
-            minWidth: "100px",
+            minWidth: "115px",
+            maxHeight: "10%",
+            minHeight: "115px",
             userSelect: "none"
         },
         description: {
@@ -41,7 +43,8 @@ export default function ProjectCard(props) {
             overflow: "hidden",
             fontSize: "calc(0.4rem + 1.2vw + 2px)",
             width: "88%",
-            textAlign: "left"
+            textAlign: "left",
+            marginRight: '64px'
         },
         icon: {
             minWidth: "24px",
@@ -62,12 +65,13 @@ export default function ProjectCard(props) {
             position: "absolute",
             right: 0,
             bottom: 0,
-            padding: "0px 15px 1.2% 0px",
+            padding: "0px 15px 0px 0px",
             display: "flex",
             flexWrap: "wrap",
             minWidth: "32px",
             width: "2%",
-            maxWidth: "64px"
+            maxWidth: "64px",
+            height: '100%'
         },
         hoveringIcon: {
             transform: "scale(1.25)",
