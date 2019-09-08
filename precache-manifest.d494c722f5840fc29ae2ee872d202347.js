@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1ac2126ac56c8d9c819abf5dd3d735fe",
+    "revision": "9a7d7743158d6a0a83e5302a770bbad8",
     "url": "/Portfolio/index.html"
   },
   {
-    "revision": "45fd9c1c085d0ede16af",
-    "url": "/Portfolio/static/js/2.b9807bb9.chunk.js"
+    "revision": "d6775b8c7485dd11177b",
+    "url": "/Portfolio/static/js/2.ee41a815.chunk.js"
   },
   {
-    "revision": "49bea15a8159e4b7bc20",
-    "url": "/Portfolio/static/js/main.6bd71d6a.chunk.js"
+    "revision": "38739c55c8f62754ca6a",
+    "url": "/Portfolio/static/js/main.55ffd4d9.chunk.js"
   },
   {
     "revision": "6b64d540f1308ee928ad",
@@ -20,8 +20,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Portfolio/static/media/AddressBook.60269e8c.webp"
   },
   {
+    "revision": "61042f710acf4827f7e9a623397bda3f",
+    "url": "/Portfolio/static/media/AddressBook.61042f71.jpg"
+  },
+  {
     "revision": "9a049ff2c8c910ab06b2dc5f037d5be5",
     "url": "/Portfolio/static/media/AddressBook.9a049ff2.webp"
+  },
+  {
+    "revision": "a6de944cea995232d09b2bf3633a539e",
+    "url": "/Portfolio/static/media/AddressBook.a6de944c.jpg"
+  },
+  {
+    "revision": "97ae6dfe55454182e8d08e1a5939f0f2",
+    "url": "/Portfolio/static/media/Arrow.97ae6dfe.png"
   },
   {
     "revision": "ebda4ee8891f66e5c9450d8e7c9b64fa",
@@ -36,8 +48,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Portfolio/static/media/Blackjack.31436142.webp"
   },
   {
+    "revision": "6ad26873522b8413e71ed97c80e75da3",
+    "url": "/Portfolio/static/media/Blackjack.6ad26873.jpg"
+  },
+  {
+    "revision": "ca278ade6f6aa221f2f665a32faddf8f",
+    "url": "/Portfolio/static/media/Blackjack.ca278ade.jpg"
+  },
+  {
+    "revision": "4f035da58fffcb3a98d7e7fd081ab578",
+    "url": "/Portfolio/static/media/CodeBackground.4f035da5.jpg"
+  },
+  {
     "revision": "cde4d1da7df44b36c720e13e014f1f33",
     "url": "/Portfolio/static/media/CodeBackground.cde4d1da.webp"
+  },
+  {
+    "revision": "95fa43b8d4263331fcf51df25ea026a0",
+    "url": "/Portfolio/static/media/ContactBackground.95fa43b8.jpg"
   },
   {
     "revision": "c94f229b4baa7e6f1f4ab848f4250829",
@@ -56,8 +84,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Portfolio/static/media/Hangman.df858568.webp"
   },
   {
+    "revision": "b14145d03c413d0703afe00327c32067",
+    "url": "/Portfolio/static/media/LibraryShelf.b14145d0.jpg"
+  },
+  {
     "revision": "b49116640150cffb0f734ba747b585db",
     "url": "/Portfolio/static/media/LibraryShelf.b4911664.webp"
+  },
+  {
+    "revision": "d1e98c7ab4f185531cf4829349155ea8",
+    "url": "/Portfolio/static/media/LibraryShelf.d1e98c7a.jpg"
   },
   {
     "revision": "e0f389f26229da85a5f4cd1dcf7ce8e4",
@@ -66,6 +102,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "24861dc1319b3324461d15ce207785c0",
     "url": "/Portfolio/static/media/Minewalker.24861dc1.webp"
+  },
+  {
+    "revision": "42989e04697294c87aaa639b444c9b80",
+    "url": "/Portfolio/static/media/Minewalker.42989e04.jpg"
+  },
+  {
+    "revision": "84035885a78b02838a27fd09f99e0619",
+    "url": "/Portfolio/static/media/Minewalker.84035885.jpg"
   },
   {
     "revision": "d79b0764df51b78912f50def3e287f28",
