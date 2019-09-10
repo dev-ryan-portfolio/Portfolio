@@ -1,6 +1,6 @@
 import React from "react";
-import Arrow from "../../Icons/Arrow.png";
 import Hamburger from "../../Icons/Hamburger Icon.svg";
+import { detect } from "detect-browser";
 
 export default class NavMenuButton extends React.Component {
     constructor(props) {
@@ -86,7 +86,10 @@ export default class NavMenuButton extends React.Component {
                     {this.props.navBarOpen ? (
                         <img
                             style={{ opacity: 0.9 }}
-                            src={Arrow}
+                            src={require("../../Icons/" +
+                                (detect().name === "safari"
+                                    ? "Arrow.png"
+                                    : "Arrow.webp"))}
                             height="100%"
                             width="100%"
                             alt="close nav bar"

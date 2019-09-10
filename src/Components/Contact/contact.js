@@ -1,7 +1,16 @@
 import React from "react";
 import { sendMail } from "../../Api/mailer.js";
 import htmlEscape from "../../Util/htmlEscape.js";
-import ContactBackground from "../../Images/ContactBackground.jpg";
+
+const { detect } = require("detect-browser");
+const getFileType = () => {
+    if (detect().name === "safari") {
+        return "ContactBackground.jpg";
+    } else {
+        return "ContactBackground.webp";
+    }
+};
+const ContactBackground = require("../../Images/" + getFileType());
 
 export default class Contact extends React.Component {
     constructor(props) {

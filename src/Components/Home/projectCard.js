@@ -188,7 +188,11 @@ export default function ProjectCard(props) {
                     : null
             }
         >
-            <a href={props.demo ? props.demo : props.repo && props.repo}>
+            <a
+                href={props.demo ? props.demo : props.repo && props.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 {card}
             </a>
 

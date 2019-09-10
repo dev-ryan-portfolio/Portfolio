@@ -1,30 +1,37 @@
 [
     {
-        "image": "Hangman.jpg",
+        "image": "Hangman",
         "alt": "Hangman Example Image",
         "description": "A hangman game created with react that can be played as the one guessing the word or the one thinking of the word",
         "demo": "https://ryancallahan312.github.io/React-Hangman",
         "repo": "https://github.com/RyanCallahan312/React-Hangman"
     },
     {
-        "image": "Blackjack.jpg",
+        "image": "Blackjack",
         "alt": "Blackjack Example Image",
         "description": "Blackjack game with betting played through the command line made with Java",
         "demo": null,
         "repo": "https://github.com/RyanCallahan312/Depreciated-Portfolio/tree/master/Java/Black%20Jack%20With%20Betting"
     },
     {
-        "image": "AddressBook.jpg",
+        "image": "AddressBook",
         "alt": "Address Book Example Image",
         "description": "An Address Book used through the commandline that will persist on restart made with Java",
         "demo": null,
         "repo": "https://github.com/RyanCallahan312/Depreciated-Portfolio/tree/master/Java/Address%20Book"
     },
     {
-        "image": "LibraryShelf.jpg",
+        "image": "LibraryShelf",
         "alt": "Library Catolog Example Image",
         "description": "A Library Catolog made with Java",
         "demo": null,
         "repo": "https://github.com/RyanCallahan312/Depreciated-Portfolio/tree/master/Java/Library%20Catalog"
+    },
+    {
+        "image": "Minewalker",
+        "alt": "A minewalker game made with python and the zelle graphics library.",
+        "description": "A minewalker game made with java",
+        "demo": null,
+        "repo": "https://github.com/RyanCallahan312/Depreciated-Portfolio/tree/master/Python/Minewalker"
     }
 ]

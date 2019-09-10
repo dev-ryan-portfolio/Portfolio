@@ -44,14 +44,15 @@ export default function ProjectCard(props) {
             fontSize: "calc(0.4rem + 1.2vw + 2px)",
             width: "88%",
             textAlign: "left",
-            marginRight: '64px'
+            marginRight: "64px"
         },
         icon: {
             minWidth: "24px",
             maxWidth: "32px",
             minHeight: "24px",
             maxHeight: "32px",
-            userSelect: "none"
+            userSelect: "none",
+            padding: "5px 0px 0px 0px"
         },
         iconActive: {
             cursor: "pointer",
@@ -71,7 +72,7 @@ export default function ProjectCard(props) {
             minWidth: "32px",
             width: "2%",
             maxWidth: "64px",
-            height: '100%'
+            height: "100%"
         },
         hoveringIcon: {
             transform: "scale(1.25)",
@@ -208,6 +209,8 @@ export default function ProjectCard(props) {
             <a
                 style={styles.link}
                 href={props.demo ? props.demo : props.repo && props.repo}
+                target="_blank"
+                rel="noopener noreferrer"
             >
                 {list}
             </a>

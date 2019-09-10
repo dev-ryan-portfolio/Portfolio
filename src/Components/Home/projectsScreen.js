@@ -4,6 +4,7 @@ import ListIcon from "../../Icons/list-icon-blue.svg";
 import ProjectCard from "./projectCard.js";
 import Projects from "../../Constants/projects.json";
 import ProjectList from "./projectList.js";
+import { detect } from "detect-browser";
 
 export default function LandingScreen() {
     const [hoveringCard, setHoveringCard] = useState(false);
@@ -48,6 +49,7 @@ export default function LandingScreen() {
             flexWrap: "nowrap",
             alignItems: "baseline",
             padding: "1% 12% 1.5% 12%",
+            margin: "5px 0px 5px 0px",
             height: "8%"
         },
         viewSelector: { flexGrow: "1", textAlign: "right", height: "auto" },
@@ -116,7 +118,11 @@ export default function LandingScreen() {
         view === "card" ? (
             <ProjectCard
                 key={index}
-                image={props.image}
+                image={
+                    detect().name === "safari"
+                        ? props.image + "jpg"
+                        : props.image + ".webp"
+                }
                 alt={props.alt}
                 description={props.description}
                 demo={props.demo}
@@ -125,7 +131,11 @@ export default function LandingScreen() {
         ) : (
             <ProjectList
                 key={index}
-                image={props.image}
+                image={
+                    detect().name === "safari"
+                        ? props.image + "jpg"
+                        : props.image + ".webp"
+                }
                 alt={props.alt}
                 description={props.description}
                 demo={props.demo}

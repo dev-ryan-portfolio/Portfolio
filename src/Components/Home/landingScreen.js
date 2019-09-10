@@ -1,6 +1,15 @@
 import React from "react";
-import CodeBackground from "../../Images/CodeBackground.jpg";
 import DownIcon from "../../Icons/downIconGold.svg";
+
+const { detect } = require("detect-browser");
+const getFileType = () => {
+    if (detect().name === "safari") {
+        return "CodeBackground.jpg";
+    } else {
+        return "CodeBackground.webp";
+    }
+};
+const CodeBackground = require("../../Images/" + getFileType());
 
 export default function LandingScreen() {
     const styles = {
@@ -14,9 +23,9 @@ export default function LandingScreen() {
         },
         headline: {
             color: "rgba(255, 252, 252, 0.85)",
-            fontSize: "4vmax",
+            fontSize: "calc(3vmax + 18px)",
             textAlign: "center",
-            padding: "15vh 0 15vh 0",
+            padding: "calc(8rem + 25px) 0px calc(5rem + 50px)",
             userSelect: "none",
             margin: 0
         },
@@ -24,11 +33,12 @@ export default function LandingScreen() {
             cursor: "pointer",
             border: "0px",
             padding: ".5rem",
-            paddingBottom: ".5vh",
             borderRadius: "100%",
             outline: "none",
-            minHeight: "64px",
-            minWidth: "64px",
+            minHeight: "76px",
+            minWidth: "76px",
+            maxHeight: "128px",
+            maxWidth: "128px",
             height: "15%",
             width: "15%",
             background: "transparent",
