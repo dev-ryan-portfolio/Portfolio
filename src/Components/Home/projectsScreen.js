@@ -120,7 +120,7 @@ export default function LandingScreen() {
                 key={index}
                 image={
                     detect().name === "safari"
-                        ? props.image + "jpg"
+                        ? props.image + ".jpg"
                         : props.image + ".webp"
                 }
                 alt={props.alt}
@@ -133,7 +133,7 @@ export default function LandingScreen() {
                 key={index}
                 image={
                     detect().name === "safari"
-                        ? props.image + "jpg"
+                        ? props.image + ".jpg"
                         : props.image + ".webp"
                 }
                 alt={props.alt}
