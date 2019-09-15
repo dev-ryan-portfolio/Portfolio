@@ -110,14 +110,15 @@ export default class Contact extends React.Component {
                 background: `url("${ContactBackground}")`,
                 backgroundSize: "100% 100%",
                 backgroundRepeat: "no-repeat",
-                overflow: "hidden",
+                overflowX: "hidden",
+                overflowY: "auto",
                 height: "100vh",
                 width: "100%"
             },
             contactForm: {
                 display: "block",
                 textAlign: "left",
-                padding: "4% 10% 0 10%"
+                padding: "2% 5% 5%"
             },
             inputContainer: {
                 margin: 20
@@ -167,7 +168,7 @@ export default class Contact extends React.Component {
                 border: "4px solid red"
             },
             messageField: {
-                height: "35vh"
+                height: "30vh"
             },
             disabled: {
                 filter: "grayscale(100%)",
