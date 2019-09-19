@@ -30,8 +30,22 @@
     {
         "image": "Minewalker",
         "alt": "A minewalker game made with python and the zelle graphics library.",
-        "description": "A minewalker game made with java",
+        "description": "A minewalker game made with python",
         "demo": null,
         "repo": "https://github.com/RyanCallahan312/Depreciated-Portfolio/tree/master/Python/Minewalker"
+    },
+    {
+        "image": "WorkInProgress",
+        "alt": "This is a work in progress",
+        "description": "A door bell made with an arduino, lm388 chip, 8ohm speaker, and a sd card reader.",
+        "demo": null,
+        "repo": "https://github.com/RyanCallahan312/arduino-doorbell"
+    },
+    {
+        "image": "WorkInProgress",
+        "alt": "This is a work in progress",
+        "description": "Collection of ASP.NET micro services to be used for a movie review site",
+        "demo": null,
+        "repo": "https://github.com/RyanCallahan312/movie-review-backend"
     }
 ]
