@@ -32,7 +32,8 @@ export default function LandingScreen() {
             width: "80%",
             justifyContent: "center",
             borderRadius: 15,
-            border: "2px solid rgba(0,0,0, .05)"
+            border: "2px solid rgba(0,0,0, .05)",
+            boxShadow: "0px 0px 5px 2px rgba(0,0,0,0.2)"
         },
         headline: {
             color: "rgba(0,138,250, 1)",
