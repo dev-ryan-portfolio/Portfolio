@@ -25,7 +25,7 @@ export default function LandingScreen() {
             display: "flex",
             background: "rgba(252,252,252,1)",
             flexWrap: "wrap",
-            margin: "0 12% 5% 12%",
+            margin: "0% 10% 5% 10%",
             padding: "5px",
             overflow: "auto",
             maxHeight: "82%",
