@@ -1,9 +1,8 @@
 {
-    "host": "smtp.gmail.com",
-    "port": 465,
-    "secure": true,
+    "host": "smtp.ethereal.email",
+    "port": 587,
     "auth": {
-        "user": "Mailer.Service2@gmail.com",
-        "pass": "Mailman1"
+        "user": "joel61@ethereal.email",
+        "pass": "a7x3uA7gyqvkwMbsxy"
     }
 }
