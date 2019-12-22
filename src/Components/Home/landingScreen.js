@@ -3,7 +3,7 @@ import DownIcon from "../../Icons/downIconGold.svg";
 
 const { detect } = require("detect-browser");
 const getFileType = () => {
-    if (detect().name === "safari") {
+    if (detect().name === "safari" || detect().name === "ios") {
         return "CodeBackground.jpg";
     } else {
         return "CodeBackground.webp";

@@ -120,7 +120,7 @@ export default function LandingScreen() {
             <ProjectCard
                 key={index}
                 image={
-                    detect().name === "safari"
+                    detect().name === "safari" || detect().name === "ios"
                         ? props.image + ".jpg"
                         : props.image + ".webp"
                 }
@@ -133,7 +133,7 @@ export default function LandingScreen() {
             <ProjectList
                 key={index}
                 image={
-                    detect().name === "safari"
+                    detect().name === "safari" || detect().name === "ios"
                         ? props.image + ".jpg"
                         : props.image + ".webp"
                 }

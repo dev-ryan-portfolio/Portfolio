@@ -4,7 +4,7 @@ import htmlEscape from "../../Util/htmlEscape.js";
 
 const { detect } = require("detect-browser");
 const getFileType = () => {
-    if (detect().name === "safari") {
+    if (detect().name === "safari" || detect().name === "ios") {
         return "ContactBackground.jpg";
     } else {
         return "ContactBackground.webp";

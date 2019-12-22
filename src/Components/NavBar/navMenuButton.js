@@ -87,7 +87,7 @@ export default class NavMenuButton extends React.Component {
                         <img
                             style={{ opacity: 0.9 }}
                             src={require("../../Icons/" +
-                                (detect().name === "safari"
+                                (detect().name === "safari" || detect().name === "ios"
                                     ? "Arrow.png"
                                     : "Arrow.webp"))}
                             height="100%"
