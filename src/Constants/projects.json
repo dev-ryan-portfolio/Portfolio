@@ -7,6 +7,13 @@
         "repo": "https://github.com/RyanCallahan312/React-Hangman"
     },
     {
+        "image": "ReviewThis",
+        "alt": "A Movie Review Website",
+        "description": "A work in progress movie review site using asp.net, react, and mongodb",
+        "demo": null,
+        "repo": "https://github.com/RyanCallahan312/movie-review-backend"
+    },
+    {
         "image": "Blackjack",
         "alt": "Blackjack Example Image",
         "description": "Blackjack game with betting played through the command line made with Java",
@@ -40,12 +47,5 @@
         "description": "A door bell made with an arduino, lm388 chip, 8ohm speaker, and a sd card reader.",
         "demo": null,
         "repo": "https://github.com/RyanCallahan312/arduino-doorbell"
-    },
-    {
-        "image": "WorkInProgress",
-        "alt": "This is a work in progress",
-        "description": "Collection of ASP.NET micro services to be used for a movie review site",
-        "demo": null,
-        "repo": "https://github.com/RyanCallahan312/movie-review-backend"
     }
 ]
