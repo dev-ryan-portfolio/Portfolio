@@ -5,6 +5,6 @@ const Sitemap = require("react-router-sitemap").default;
 
 (
     new Sitemap(router)
-        .build('https://ryancallahan312.github.io/Portfolio')
+        .build('https://portfolio.devryan.io')
         .save('../../public/sitemap.xml')
 );
