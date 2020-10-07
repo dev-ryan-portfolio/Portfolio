@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b1b30d490f32c1f37da5430ed8bd2872",
+    "revision": "f051f01e105e976c8c63432cf847cfc2",
     "url": "/index.html"
   },
   {
-    "revision": "d85b536fcadcf53af46d",
-    "url": "/static/js/2.1860dad3.chunk.js"
+    "revision": "9ca3d7e24659cfd49d93",
+    "url": "/static/js/2.62d9006f.chunk.js"
   },
   {
-    "revision": "89660652d74c3068428c",
-    "url": "/static/js/main.304bd085.chunk.js"
+    "revision": "8ce7a222b36041d6fa63",
+    "url": "/static/js/main.8cc7707d.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -30,6 +30,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a6de944cea995232d09b2bf3633a539e",
     "url": "/static/media/AddressBook.a6de944c.jpg"
+  },
+  {
+    "revision": "0eb9f22a746b035d99f02317c7ae10e4",
+    "url": "/static/media/ArduinoDoorBell.0eb9f22a.webp"
+  },
+  {
+    "revision": "30945dec9c3b388d07d17af9bf4d7ac3",
+    "url": "/static/media/ArduinoDoorBell.30945dec.jpg"
   },
   {
     "revision": "97ae6dfe55454182e8d08e1a5939f0f2",
@@ -100,6 +108,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/LibraryShelf.e0f389f2.webp"
   },
   {
+    "revision": "0322f62f186fb6a3bfe0d0fe0033f84c",
+    "url": "/static/media/LosingTheLyrics.0322f62f.jpg"
+  },
+  {
+    "revision": "167f06d3852947e6ee7b979328396d98",
+    "url": "/static/media/LosingTheLyrics.167f06d3.webp"
+  },
+  {
     "revision": "24861dc1319b3324461d15ce207785c0",
     "url": "/static/media/Minewalker.24861dc1.webp"
   },
@@ -116,8 +132,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Minewalker.d79b0764.webp"
   },
   {
-    "revision": "24aaa254f96369a3b54f25dd2e7094f1",
-    "url": "/static/media/Resume.24aaa254.pdf"
+    "revision": "04c940634bd3526aef22ef5e5f6bacd2",
+    "url": "/static/media/Resume.04c94063.pdf"
   },
   {
     "revision": "88283e935bb34d6be6589d7ae11cd659",
