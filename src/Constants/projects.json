@@ -3,8 +3,15 @@
         "image": "Hangman",
         "alt": "Hangman Example Image",
         "description": "A hangman game created with react that can be played as the one guessing the word or the one thinking of the word",
-        "demo": "https://ryancallahan312.github.io/React-Hangman",
+        "demo": "https://hangman.devryan.io/",
         "repo": "https://github.com/RyanCallahan312/React-Hangman"
+    },
+    {
+        "image": "LosingTheLyrics",
+        "alt": "A jackbox style game",
+        "description": "A jackbox style game based off popular game show Don't Forget The lyrics!",
+        "demo": "https://losing-the-lyrics.devryan.io/",
+        "repo": "https://github.com/RyanCallahan312/losing-the-lyrics"
     },
     {
         "image": "ReviewThis",
@@ -42,8 +49,8 @@
         "repo": "https://github.com/RyanCallahan312/Depreciated-Portfolio/tree/master/Python/Minewalker"
     },
     {
-        "image": "WorkInProgress",
-        "alt": "This is a work in progress",
+        "image": "ArduinoDoorBell",
+        "alt": "A doorbell made from an arduino",
         "description": "A door bell made with an arduino, lm388 chip, 8ohm speaker, and a sd card reader.",
         "demo": null,
         "repo": "https://github.com/RyanCallahan312/arduino-doorbell"
