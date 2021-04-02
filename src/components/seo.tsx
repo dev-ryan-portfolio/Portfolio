@@ -17,7 +17,15 @@ interface Props {
 	title: string;
 }
 
-function SEO({ description, lang, meta, title }: Props) {
+const defaultProps : Props = {
+	lang: `en`,
+	meta: [],
+	description: ``,
+	title: `My Gatsby Project`
+};
+
+function SEO(props: Props): React.ReactElement | null {
+	let { description, lang, meta, title } = props;
 	const { site } = useStaticQuery(
 		graphql`
 			query {
@@ -80,10 +88,6 @@ function SEO({ description, lang, meta, title }: Props) {
 	);
 }
 
-SEO.defaultProps = {
-	lang: `en`,
-	meta: [],
-	description: ``,
-};
+SEO.defaultProps = defaultProps;
 
 export default SEO;

@@ -7,16 +7,17 @@
 
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { HeaderData } from '../types';
 
 import Header from './header';
 import './layout.css';
 
 interface Props {
-	children: React.ReactNode
+	children: React.ReactNode;
 }
 
 const Layout = ({ children }: Props) => {
-	const data = useStaticQuery(graphql`
+	const data: HeaderData = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
 				siteMetadata {
