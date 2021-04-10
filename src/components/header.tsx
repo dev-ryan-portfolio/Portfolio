@@ -12,7 +12,7 @@ const Header = ({ siteTitle }: Props) => (
 			<Link to='/' className='logo-link'>
 				<StaticImage
 					src={'../images/DevRyanLogo.svg'}
-					width={70}
+					width={60}
 					quality={100}
 					formats={['AUTO', 'SVG', 'WEBP']}
 					alt='Dev Ryan Logo'
