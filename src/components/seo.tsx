@@ -21,7 +21,7 @@ const defaultProps : Props = {
 	lang: `en`,
 	meta: [],
 	description: ``,
-	title: `My Gatsby Project`
+	title: `Dev Ryan`
 };
 
 function SEO(props: Props): React.ReactElement | null {

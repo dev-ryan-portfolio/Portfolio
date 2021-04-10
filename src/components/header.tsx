@@ -1,33 +1,46 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-
-interface Props{
-	siteTitle: string
+import { StaticImage } from 'gatsby-plugin-image';
+import './header.css';
+interface Props {
+	siteTitle: string;
 }
 
 const Header = ({ siteTitle }: Props) => (
-	<header
-		style={{
-			background: `rebeccapurple`,
-			marginBottom: `1.45rem`,
-		}}>
-		<div
-			style={{
-				margin: `0 auto`,
-				maxWidth: 960,
-				padding: `1.45rem 1.0875rem`,
-			}}>
-			<h1 style={{ margin: 0 }}>
-				<Link
-					to='/'
-					style={{
-						color: `white`,
-						textDecoration: `none`,
-					}}>
-					{siteTitle}
-				</Link>
-			</h1>
-		</div>
+	<header>
+		<nav>
+			<Link to='/' className='logo-link'>
+				<StaticImage
+					src={'../images/DevRyanLogo.svg'}
+					width={70}
+					quality={100}
+					formats={['AUTO', 'SVG', 'WEBP']}
+					alt='Dev Ryan Logo'
+				/>
+			</Link>
+			<ul>
+				<li>
+					<Link to='/blog' className='page-link'>
+						Blog
+					</Link>
+				</li>
+				<li>
+					<Link to='/resume' className='page-link'>
+						Resume
+					</Link>
+				</li>
+				<li>
+					<Link to='/projects' className='page-link'>
+						Projects
+					</Link>
+				</li>
+				<li>
+					<Link to='/contact' className='page-link'>
+						Contact
+					</Link>
+				</li>
+			</ul>
+		</nav>
 	</header>
 );
 
