@@ -1,5 +1,8 @@
 header {
 	background-color: #252834;
+	position: sticky;
+	top: 0;
+	width: 100%;
 }
 
 header nav {
