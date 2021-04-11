@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import './header.css';
+import '@styles/header.css';
 interface Props {
 	siteTitle: string;
 }
 
 const Header = ({ siteTitle }: Props) => (
-	<header>
+	<header className="nav-container">
 		<nav>
 			<Link to='/' className='logo-link'>
 				<StaticImage
-					src={'../images/DevRyanLogo.svg'}
+					src={'../../images/DevRyanLogo.svg'}
 					width={60}
 					quality={100}
 					formats={['AUTO', 'SVG', 'WEBP']}

@@ -7,10 +7,10 @@
 
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { HeaderData } from '../types';
+import { HeaderData } from '@types';
 
 import Header from './header';
-import './layout.css';
+import '@styles/layout.css';
 
 interface Props {
 	children: React.ReactNode;
@@ -28,20 +28,12 @@ const Layout = ({ children }: Props) => {
 	`);
 
 	return (
-		<>
+		<div className="layout-grid-container">
 			<Header siteTitle={data.site.siteMetadata?.title || `Title`} />
 			<div>
 				<main>{children}</main>
-				<footer
-					style={{
-						marginTop: `2rem`,
-					}}>
-					© {new Date().getFullYear()}, Built with
-					{` `}
-					<a href='https://www.gatsbyjs.com'>Gatsby</a>
-				</footer>
 			</div>
-		</>
+		</div>
 	);
 };
 

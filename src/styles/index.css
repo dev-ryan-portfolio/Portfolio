@@ -1,0 +1,17 @@
+h1{
+    font-family: 'Roboto';
+    color: #FFFFFF;
+    letter-spacing: 2px;
+}
+
+h3{
+    font-family: 'Roboto';
+    font-variant: small-caps;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+}
+
+main {
+	background-color: #252834;
+    text-align: center;
+}

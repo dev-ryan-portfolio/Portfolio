@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
 	siteMetadata: {
 		title: `Dev Ryan Portfolio`,
@@ -27,6 +29,16 @@ module.exports = {
 				icon: `src/images/DevRyanLogo.svg`, // This path is relative to the root of the site.
 			},
 		},
+		{
+			resolve: `gatsby-plugin-google-fonts`,
+			options: {
+				fonts: [
+					`Roboto`,
+				],
+				display: 'swap',
+			},
+		},
+		`gatsby-plugin-tsconfig-paths`,
 		`gatsby-plugin-gatsby-cloud`,
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.dev/offline

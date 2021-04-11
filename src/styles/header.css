@@ -1,11 +1,11 @@
-header {
+header.nav-container {
 	background-color: #252834;
 	position: sticky;
 	top: 0;
 	width: 100%;
 }
 
-header nav {
+header.nav-container > nav {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -14,7 +14,7 @@ header nav {
 	align-content: stretch;
 }
 
-nav ul {
+header.nav-container >nav > ul {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -26,7 +26,7 @@ nav ul {
 	text-align: center;
 }
 
-nav ul li {
+header.nav-container >nav > ul > li {
 	border-bottom: none;
 	width: 10rem;
 	margin: 0px;
@@ -38,7 +38,7 @@ nav ul li {
 
 a.logo-link {
 	display: inline-block;
-	padding: 5px 0px 5px 5px;
+	padding: 5px 5px 0px 5px;
 }
 
 a.page-link {
@@ -47,6 +47,7 @@ a.page-link {
 	display: block;
 	font-size: 22px;
 	padding: 1rem;
+    font-family: 'Roboto';
 }
 
 a.page-link:hover {
