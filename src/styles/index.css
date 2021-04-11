@@ -12,6 +12,7 @@ h3{
 }
 
 main {
+    height: 100%;
 	background-color: #252834;
     text-align: center;
 }

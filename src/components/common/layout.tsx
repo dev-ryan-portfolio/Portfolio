@@ -30,7 +30,7 @@ const Layout = ({ children }: Props) => {
 	return (
 		<div className="layout-grid-container">
 			<Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-			<div>
+			<div className="grid-main-container">
 				<main>{children}</main>
 			</div>
 		</div>

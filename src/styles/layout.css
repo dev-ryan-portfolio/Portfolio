@@ -4,6 +4,7 @@ html {
 	font: 112.5%/1.45em georgia, serif, sans-serif;
 	box-sizing: border-box;
 	overflow-y: scroll;
+	height: -webkit-fill-available;
 }
 body {
 	margin: 0;
@@ -597,8 +598,13 @@ pre tt:after {
 }
 
 .layout-grid-container {
+	min-height: 100vh;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 0.2fr 1.8fr;
+	grid-template-rows: min-content auto;
 	gap: 0px 0px;
+}
+
+.grid-main-container {
+	height: 100%
 }
