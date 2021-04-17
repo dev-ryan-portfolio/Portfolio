@@ -16,3 +16,12 @@ main {
 	background-color: #252834;
     text-align: center;
 }
+
+.headline-grid-container {
+	min-height: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content auto;
+	gap: 0px 0px;
+}
+

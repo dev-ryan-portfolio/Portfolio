@@ -16,7 +16,7 @@ interface Props {
 	children: React.ReactNode;
 }
 
-const Layout = ({ children }: Props) => {
+const Layout: React.FC<Props>  = ({ children }: Props) => {
 	const data: HeaderData = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
