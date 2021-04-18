@@ -24,13 +24,13 @@ const CardRadial: React.FC<Props> = (props: Props) => {
 					key={imagePath.slice(-15) + i}
 					src={imagePath}
 					alt='Skill Card'
-					width={60}
+					width={150}
 					className='skill-card'
 				/>
 			);
 		});
 
-	return <div className='skill-card-radial-container'>{images}</div>;
+	return <div className='skill-card-radial-container'><div className='skill-card-base'>{images}</div></div>;
 };
 
 export default CardRadial;

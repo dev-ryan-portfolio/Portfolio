@@ -1,24 +1,30 @@
 div.skill-card-radial-container{
+    text-align:center;
     height: 100%;
 } 
 
-img.skill-card:nth-child(1){ --angle: -0deg; }
-img.skill-card:nth-child(2){ --angle: -15deg; }
-img.skill-card:nth-child(3){ --angle: -30deg; }
-img.skill-card:nth-child(4){ --angle: -45deg; }
-img.skill-card:nth-child(5){ --angle: -60deg; }
-img.skill-card:nth-child(6){ --angle: -75deg; }
-img.skill-card:nth-child(7){ --angle: -90deg; }
-img.skill-card:nth-child(8){ --angle: -105deg; }
-img.skill-card:nth-child(9){ --angle: -120deg; }
-img.skill-card:nth-child(10){ --angle: -135deg; }
-img.skill-card:nth-child(11){ --angle: -150deg; }
-img.skill-card:nth-child(12){ --angle: -165deg; }
-img.skill-card:nth-child(13){ --angle: -180deg; }
+div.skill-card-base{
+    position: relative;
+}
+
+/* position is calculated by (n * (180 / 14))*/
+img.skill-card:nth-child(1){ --position: -12.857deg; --angle: -60deg;}
+img.skill-card:nth-child(2){ --position: -25.714deg; --angle: -50deg; }
+img.skill-card:nth-child(3){ --position: -38.571deg; --angle: -40deg; }
+img.skill-card:nth-child(4){ --position: -51.428deg; --angle: -30deg; }
+img.skill-card:nth-child(5){ --position: -64.285deg; --angle: -20deg; }
+img.skill-card:nth-child(6){ --position: -77.142deg; --angle: -10deg; }
+img.skill-card:nth-child(7){ --position: -90deg; --angle: 0deg;  }
+img.skill-card:nth-child(8){ --position: -102.857deg; --angle: 10deg; }
+img.skill-card:nth-child(9){ --position: -115.714deg; --angle: 20deg; }
+img.skill-card:nth-child(10){ --position:-128.571deg; --angle: 30deg; }
+img.skill-card:nth-child(11){ --position: -141.428deg; --angle: 40deg; }
+img.skill-card:nth-child(12){ --position: -154.285deg; --angle: 50deg; }
+img.skill-card:nth-child(13){ --position: -167.142deg; --angle: 60deg; }
 
 
 img.skill-card {
     padding: 10px;
     position: absolute;
-    transform:  rotate(var(--angle)) translate(10em) rotate(calc(-1 * var(--angle)));
+    transform: rotate(var(--position)) translate(15em) rotate(calc(calc((-1 * var(--position)) - var(--angle)))) ;
 }
