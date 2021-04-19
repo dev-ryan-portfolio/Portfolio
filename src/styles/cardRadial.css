@@ -33,14 +33,14 @@ img.skill-card {
 
 img.skill-card:hover {
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     transform: scale(1.1);
 }
 
 img.skill-card-selected{
-    bottom: 50% !important;
+    bottom: 35% !important;
     left: 45% !important;
     transform: rotate(0) !important;
-    z-index: 1 !important;
+    z-index: 2 !important;
     transform: scale(1.5) !important;
 }

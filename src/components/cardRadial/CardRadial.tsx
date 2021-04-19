@@ -16,7 +16,7 @@ const CardRadial: React.FC<Props> = (props: Props) => {
 		setSelected(() => (selected == index ? -1 : index));
 		setTimeout(
 			() => navigate(`/projects?tags=${encodeURI(cardToTagMap[index])}`),
-			600,
+			750,
 		);
 	}, []);
 
