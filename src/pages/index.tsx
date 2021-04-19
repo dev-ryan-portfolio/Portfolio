@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useMediaQuery } from 'react-responsive';
 
 import Layout from '@components/common/layout';
 import SEO from '@components/common/seo';
@@ -34,16 +35,27 @@ const IndexPage: React.FC = () => {
 	`);
 
 	const cardPaths = data.allFile.nodes.map((node) => node.publicURL);
+
+	const isDesktopOrLaptop = useMediaQuery(
+		{ minDeviceWidth: 1224 },
+	);
+
+	console.log(isDesktopOrLaptop)
+
 	return (
 		<Layout>
 			<SEO title='Home' />
 			<div className='headline-grid-container'>
-				<div>
+				<div className='headline-text-container'>
 					<h1>👋 I’m Ryan</h1>
 					<h3>a full stack web developer</h3>
 					<h3>with a lot of cards in my hand</h3>
 				</div>
-				<CardRadial cardPaths={cardPaths} />
+				{isDesktopOrLaptop ? (
+					<CardRadial cardPaths={cardPaths} />
+				) : (
+					<h1>small screen</h1>
+				)}
 			</div>
 		</Layout>
 	);

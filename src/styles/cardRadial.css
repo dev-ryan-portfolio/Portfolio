@@ -1,30 +1,46 @@
-div.skill-card-radial-container{
-    text-align:center;
+div.skill-card-radial-container{display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
     height: 100%;
+    overflow: hidden;
+    position: relative;
 } 
 
-div.skill-card-base{
-    position: relative;
-}
-
 /* position is calculated by (n * (180 / 14))*/
-img.skill-card:nth-child(1){ --position: -12.857deg; --angle: -60deg;}
-img.skill-card:nth-child(2){ --position: -25.714deg; --angle: -50deg; }
-img.skill-card:nth-child(3){ --position: -38.571deg; --angle: -40deg; }
-img.skill-card:nth-child(4){ --position: -51.428deg; --angle: -30deg; }
-img.skill-card:nth-child(5){ --position: -64.285deg; --angle: -20deg; }
-img.skill-card:nth-child(6){ --position: -77.142deg; --angle: -10deg; }
-img.skill-card:nth-child(7){ --position: -90deg; --angle: 0deg;  }
-img.skill-card:nth-child(8){ --position: -102.857deg; --angle: 10deg; }
-img.skill-card:nth-child(9){ --position: -115.714deg; --angle: 20deg; }
-img.skill-card:nth-child(10){ --position:-128.571deg; --angle: 30deg; }
-img.skill-card:nth-child(11){ --position: -141.428deg; --angle: 40deg; }
-img.skill-card:nth-child(12){ --position: -154.285deg; --angle: 50deg; }
-img.skill-card:nth-child(13){ --position: -167.142deg; --angle: 60deg; }
+img.skill-card:nth-child(1){ --angle: -60deg;}
+img.skill-card:nth-child(2){ --angle: -50deg; }
+img.skill-card:nth-child(3){ --angle: -40deg; }
+img.skill-card:nth-child(4){ --angle: -30deg; }
+img.skill-card:nth-child(5){ --angle: -20deg; }
+img.skill-card:nth-child(6){ --angle: -10deg; }
+img.skill-card:nth-child(7){ --angle: 0deg;  }
+img.skill-card:nth-child(8){ --angle: 10deg; }
+img.skill-card:nth-child(9){ --angle: 20deg; }
+img.skill-card:nth-child(10){ --angle: 30deg; }
+img.skill-card:nth-child(11){ --angle: 40deg; }
+img.skill-card:nth-child(12){ --angle: 50deg; }
+img.skill-card:nth-child(13){ --angle: 60deg; }
 
 
 img.skill-card {
-    padding: 10px;
+    cursor: pointer;
+    margin: 0px;
     position: absolute;
-    transform: rotate(var(--position)) translate(15em) rotate(calc(calc((-1 * var(--position)) - var(--angle)))) ;
+    transform: rotate(var(--angle));
+    transition: all 500ms ease-out 0s;
+}
+
+img.skill-card:hover {
+    position: absolute;
+    z-index: 0;
+    transform: scale(1.1);
+}
+
+img.skill-card-selected{
+    bottom: 50% !important;
+    left: 45% !important;
+    transform: rotate(0) !important;
+    z-index: 1 !important;
+    transform: scale(1.5) !important;
 }

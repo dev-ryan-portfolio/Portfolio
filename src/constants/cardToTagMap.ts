@@ -1,0 +1,15 @@
+export const cardToTagMap: Array<string> = [
+	'azure',
+	'docker',
+	'dotnet',
+	'linux',
+	'microservice',
+	'node',
+	'openapi',
+	'plsql',
+	'postgresql',
+	'python',
+	'react',
+	'redux',
+	'spring',
+];
