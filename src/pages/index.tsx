@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useMediaQuery } from 'react-responsive';
 
-import Layout from '@components/common/layout';
+import Layout from '@components/common/defaultLayout';
 import SEO from '@components/common/seo';
 import '@styles/index.css';
 import CardRadial from '@components/cardRadial/CardRadial';
@@ -40,16 +40,15 @@ const IndexPage: React.FC = () => {
 		{ minDeviceWidth: 1224 },
 	);
 
-	console.log(isDesktopOrLaptop)
 
 	return (
 		<Layout>
 			<SEO title='Home' />
 			<div className='headline-grid-container'>
 				<div className='headline-text-container'>
-					<h1>👋 I’m Ryan</h1>
-					<h3>a full stack web developer</h3>
-					<h3>with a lot of cards in my hand</h3>
+					<h1 className='index-header'>👋 I’m Ryan</h1>
+					<h3 className='index-header'>a full stack web developer</h3>
+					<h3 className='index-header'>with a lot of cards in my hand</h3>
 				</div>
 				{isDesktopOrLaptop ? (
 					<CardRadial cardPaths={cardPaths} />

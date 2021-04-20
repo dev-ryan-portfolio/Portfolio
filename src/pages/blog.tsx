@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-import Layout from '@components/common/layout';
+import Layout from '@components/common/defaultLayout';
 import SEO from '@components/common/seo';
 
 const Blog: React.FC = () => (

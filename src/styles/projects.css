@@ -1,14 +1,6 @@
-h1.index-header {
-    font-size: 6ch;
+h1.projects-header {
+	font-size: 6ch;
 	font-family: 'Roboto';
-	color: #ffffff;
-	letter-spacing: 2px;
-}
-
-h3.index-header {
-    font-size: 3ch;
-	font-family: 'Roboto';
-	font-variant: small-caps;
 	color: #ffffff;
 	letter-spacing: 2px;
 }

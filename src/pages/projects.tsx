@@ -1,15 +1,17 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 
-import Layout from '@components/common/layout';
+import Layout from '@components/common/defaultLayout';
 import SEO from '@components/common/seo';
+import '@styles/projects.css';
 
 const Projects: React.FC = () => (
 	<Layout>
 		<SEO title='Projects' />
-		<h1>Hi from the Projects page</h1>
-		<p>Welcome to page 2</p>
-		<Link to='/'>Go back to the homepage</Link>
+		<div className='headline-grid-container'>
+			<div className='headline-text-container'>
+				<h1 className='projects-header'>Featured Projects</h1>
+			</div>
+		</div>
 	</Layout>
 );
 
