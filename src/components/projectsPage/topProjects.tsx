@@ -38,6 +38,7 @@ const TopProjects: React.FC = (props: Props) => {
 				<ProjectCard
 					image={getImage(e.childImageSharp)}
                     base={e.base}
+                    key={e.base}
 				/>
 			);
 		},

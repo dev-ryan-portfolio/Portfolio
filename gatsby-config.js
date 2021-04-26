@@ -31,12 +31,17 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-plugin-google-fonts`,
+			resolve: `gatsby-plugin-google-fonts-v2`,
 			options: {
+				verbose: true,
 				fonts: [
-					`Roboto`,
+					{
+						family: 'Roboto',
+					},
+					{
+						family: 'Nunito Sans'
+					},
 				],
-				display: 'swap',
 			},
 		},
 		`gatsby-plugin-tsconfig-paths`,
