@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '@styles/cardRadial.css';
+import '@styles/skillCardRadial.css';
 import { navigate } from 'gatsby';
 import { cardToTagMap } from '@constants/cardToTagMap';
 

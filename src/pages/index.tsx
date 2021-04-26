@@ -4,7 +4,8 @@ import { useMediaQuery } from 'react-responsive';
 
 import Layout from '@components/common/defaultLayout';
 import SEO from '@components/common/seo';
-import SkillCardRadial from '@components/cardRadial/skillCardRadial';
+import SkillCardRadial from '@components/skillCard/skillCardRadial';
+import SkillCardCarosel from '@components/skillCard/skillCardCarosel';
 import '@styles/index.css';
 
 interface CardUrlQuery {
@@ -46,7 +47,7 @@ const IndexPage: React.FC = () => {
 				{isDesktopOrLaptop ? (
 					<SkillCardRadial cardPaths={cardPaths} />
 				) : (
-					<h1>small screen</h1>
+					<SkillCardCarosel cardPaths={cardPaths} />
 				)}
 			</div>
 		</Layout>
