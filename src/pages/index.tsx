@@ -19,27 +19,18 @@ interface CardUrlQuery {
 
 const IndexPage: React.FC = () => {
 	const data: CardUrlQuery = useStaticQuery(graphql`
-		{
-			allFile(
-				filter: {
-					name: { regex: "/\\bskill-card-/" }
-					ext: { regex: "/.svg\\b/" }
-				}
-				sort: {order: ASC, fields: name}
-			) {
-				nodes {
-					publicURL
-				}
+	{
+		allFile(filter: {relativeDirectory: {eq: "skillCards"}}) {
+			nodes {
+				publicURL
 			}
 		}
+	}
 	`);
 
 	const cardPaths = data.allFile.nodes.map((node) => node.publicURL);
 
-	const isDesktopOrLaptop = useMediaQuery(
-		{ minDeviceWidth: 1224 },
-	);
-
+	const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 1224 });
 
 	return (
 		<Layout>
@@ -48,7 +39,9 @@ const IndexPage: React.FC = () => {
 				<div className='headline-text-container'>
 					<h1 className='index-header'>👋 I’m Ryan</h1>
 					<h3 className='index-header'>a full stack web developer</h3>
-					<h3 className='index-header'>with a lot of cards in my hand</h3>
+					<h3 className='index-header'>
+						with a lot of cards in my hand
+					</h3>
 				</div>
 				{isDesktopOrLaptop ? (
 					<CardRadial cardPaths={cardPaths} />
