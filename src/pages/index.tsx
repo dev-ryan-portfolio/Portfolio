@@ -4,8 +4,8 @@ import { useMediaQuery } from 'react-responsive';
 
 import Layout from '@components/common/defaultLayout';
 import SEO from '@components/common/seo';
-import '@styles/index.css';
 import SkillCardRadial from '@components/cardRadial/skillCardRadial';
+import '@styles/index.css';
 
 interface CardUrlQuery {
 	allFile: {

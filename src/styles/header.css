@@ -10,11 +10,11 @@ header.nav-container > nav {
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
-	align-items: stretch;
+	align-items: center;
 	align-content: stretch;
 }
 
-header.nav-container >nav > ul {
+header.nav-container > nav > ul {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -26,32 +26,59 @@ header.nav-container >nav > ul {
 	text-align: center;
 }
 
-header.nav-container >nav > ul > li {
+header.nav-container > nav > ul > li {
 	border-bottom: none;
-	width: 10rem;
-	margin: 0px;
 	display: flex;
 	justify-content: center;
 	text-align: center;
 	align-items: center;
+	width: 30%;
 }
 
 a.logo-link {
 	display: inline-block;
 	padding: 5px 5px 0px 5px;
-	min-width: 70px;
+	width: 70px;
+}
+
+img.logo {
+	margin: 0px;
 }
 
 a.page-link {
-	color: #FFFFFF;
-    text-decoration: none;
+	color: #ffffff;
+	text-decoration: none;
 	display: block;
 	font-size: 22px;
 	padding: 1rem;
-    font-family: 'Roboto';
+	font-family: 'Roboto';
 }
 
 a.page-link:hover {
 	background-color: rgba(64, 70, 92, 0.12);
 	transition: cubic-bezier(0.45, 0.05, 0.55, 0.95) 50ms;
+}
+
+span.burger-menu {
+	width: 2rem;
+	height: 0.25rem;
+	background: #ffffff;
+	border-radius: 10px;
+	transition: all 0.3s linear;
+	position: relative;
+	transform-origin: 1px;
+}
+
+button.burger-menu {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 2rem;
+	height: 2rem;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	margin-right: 10px;
+	z-index: 10;
 }
