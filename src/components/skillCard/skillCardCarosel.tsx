@@ -2,6 +2,7 @@ import * as React from 'react';
 import '@styles/skillCardCarosel.css';
 import { navigate } from 'gatsby';
 import { cardToTagMap } from '@constants/cardToTagMap';
+import { useMediaQuery } from 'react-responsive';
 
 interface Props {
 	cardPaths: Array<string>;
@@ -28,6 +29,8 @@ const SkillCardCarosel: React.FC<Props> = (props: Props) => {
 		setFilteredPaths(tempFilteredPaths);
 	}, []);
 
+	const smallScreen = useMediaQuery({ minDeviceHeight: 700 });
+
 	return (
 		<div className='skill-card-list-container'>
 			{
@@ -36,7 +39,7 @@ const SkillCardCarosel: React.FC<Props> = (props: Props) => {
 			<img
 				src={filteredPaths[selected]}
 				alt='Skill Card'
-				width={200}
+				width={smallScreen ? 280 : 200}
 				className={`skill-card-list`}
 				onClick={() => handleClick(selected)}
 			/>
