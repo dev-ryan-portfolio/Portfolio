@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import Layout from '@components/common/defaultLayout';
 import SEO from '@components/common/seo';
 import '@styles/index.css';
-import CardRadial from '@components/cardRadial/CardRadial';
+import SkillCardRadial from '@components/cardRadial/skillCardRadial';
 
 interface CardUrlQuery {
 	allFile: {
@@ -20,7 +20,7 @@ interface CardUrlQuery {
 const IndexPage: React.FC = () => {
 	const data: CardUrlQuery = useStaticQuery(graphql`
 	{
-		allFile(filter: {relativeDirectory: {eq: "skillCards"}}) {
+		allFile(filter: {relativeDirectory: {eq: "skillCards"}}, sort: {fields: name}) {
 			nodes {
 				publicURL
 			}
@@ -44,7 +44,7 @@ const IndexPage: React.FC = () => {
 					</h3>
 				</div>
 				{isDesktopOrLaptop ? (
-					<CardRadial cardPaths={cardPaths} />
+					<SkillCardRadial cardPaths={cardPaths} />
 				) : (
 					<h1>small screen</h1>
 				)}

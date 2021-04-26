@@ -7,7 +7,7 @@ interface Props {
 	cardPaths: Array<string>;
 }
 
-const CardRadial: React.FC<Props> = (props: Props) => {
+const SkillCardRadial: React.FC<Props> = (props: Props) => {
 	const { cardPaths } = props;
 
 	const [selected, setSelected] = React.useState(-1);
@@ -62,4 +62,4 @@ const CardRadial: React.FC<Props> = (props: Props) => {
 	return <div className='skill-card-radial-container'>{images}</div>;
 };
 
-export default CardRadial;
+export default SkillCardRadial;
