@@ -1,9 +1,16 @@
 import * as React from 'react';
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { useStaticQuery, graphql } from 'gatsby';
 import { IProjectInfo, projectMappings } from '@constants/projectMappings';
 import { useMediaQuery } from 'react-responsive';
 
 import '@styles/projectCard.css';
+
+interface Icons {
+	allFile: {
+		nodes: [{ publicURL: string; name: string }];
+	};
+}
 
 interface Props {
 	image: IGatsbyImageData;
@@ -16,6 +23,19 @@ const ProjectCard: React.FC<Props> = ({ image, base }: Props) => {
 	);
 
 	const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 1424 });
+
+	const icons: Icons = useStaticQuery(graphql`
+	{
+		allFile(
+			filter: {relativeDirectory: {eq: "icons"}, name: {in: ["eye-white", "git-white", "no-eye-white"]}}
+		) {
+			nodes {
+				publicURL
+				name
+			}
+		}
+	}
+	`);
 
 	return (
 		<div
@@ -52,6 +72,46 @@ const ProjectCard: React.FC<Props> = ({ image, base }: Props) => {
 						{projectInfo.description}
 					</p>
 				</div>
+			</div>
+			<div className='demo-github-links'>
+				<a
+					className='demo-link'
+					href={projectInfo.github}
+					target='_blank'>
+					<img
+						width='32px'
+						src={
+							icons.allFile.nodes.find(
+								(element) => element.name === 'git-white',
+							).publicURL
+						}
+						alt='github repo link'
+					/>
+				</a>
+				<a
+					className='demo-link'
+					href={projectInfo.demo}
+					target='_blank'>
+					<img
+						width='32px'
+						src={
+							icons.allFile.nodes.find((element) =>
+								projectInfo.demo
+									? element.name === 'eye-white'
+									: element.name === 'no-eye-white',
+							).publicURL
+						}
+						style={
+							projectInfo.demo
+								? {}
+								: {
+										cursor: 'default',
+										opacity: 0.5,
+								  }
+						}
+						alt='project demo link'
+					/>
+				</a>
 			</div>
 		</div>
 	);

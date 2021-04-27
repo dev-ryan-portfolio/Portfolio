@@ -15,10 +15,10 @@ div.card-title-with-tags {
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
-	align-items: stretch;
+	align-items: baseline;
 	align-content: stretch;
 	margin-bottom: 0px;
-    height: 20%;
+	height: 20%;
 }
 
 div.card-text {
@@ -32,7 +32,7 @@ h1.card-title {
 	font-size: clamp(10pt, 1.2em, 28pt);
 	font-family: 'Nunito Sans';
 	margin-bottom: 0px;
-    letter-spacing: 1px;
+	letter-spacing: 1px;
 }
 
 h1.card-tags {
@@ -44,8 +44,8 @@ h1.card-tags {
 }
 
 div.card-description-container {
-    height: fill-available;
-    height: 6em;
+	height: fill-available;
+	height: 6em;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -57,5 +57,14 @@ div.card-description-container {
 p.card-description {
 	font-size: clamp(8pt, 1em, 25pt);
 	font-family: 'Nunito Sans';
-    margin: 0px;
+	margin: 0px;
+}
+
+div.demo-github-links {
+	position: absolute;
+}
+
+a.demo-link {
+	padding: 5px;
+	margin: 0px;
 }

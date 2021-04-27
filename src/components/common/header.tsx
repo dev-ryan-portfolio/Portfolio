@@ -61,7 +61,6 @@ const Header = ({ siteTitle }: Props) => {
 		</button>
 	);
 
-	console.log(devRyanLogo);
 	return (
 		<header className='nav-container'>
 			<nav>

@@ -4,6 +4,8 @@ export interface IProjectInfo {
 	base: string;
 	displayTags: Array<string>;
 	hiddenTags: Array<string>;
+	github: string;
+	demo?: string;
 	isPronounced?: boolean;
 }
 
@@ -14,10 +16,12 @@ export const projectMappings: Array<IProjectInfo> = [
 		base: 'losing-the-lyrics-proj.png',
 		displayTags: ['React', 'Next.js', 'Socket.io'],
 		hiddenTags: ['react', 'redux', 'node'],
+		github: 'https://github.com/RyanCallahan312/losing-the-lyrics',
+		demo: 'http://losing-the-lyrics.devryan.io/',
 	},
 	{
 		name: 'Highlight-intator',
-		description: `A web app to automatically create short highlight videos from Twitch live stream vods. Targeted at small streamers with little resources to help grow thier audience.`,
+		description: `A web app to automatically create short highlight videos from Twitch live stream vods. Targeted at small streamers to help grow thier audience. (demo disabled due to hosting costs)`,
 		base: 'highlight-inator-proj.png',
 		displayTags: ['.NET5', 'FFMPEG', 'React'],
 		hiddenTags: [
@@ -30,6 +34,7 @@ export const projectMappings: Array<IProjectInfo> = [
 			'docker',
 			'postgresql',
 		],
+		github: 'https://github.com/auto-highlighter',
 		isPronounced: true,
 	},
 	{
@@ -38,5 +43,7 @@ export const projectMappings: Array<IProjectInfo> = [
 		base: 'chat-app-proj.png',
 		displayTags: ['React', 'Next.js', 'Socket.io'],
 		hiddenTags: ['react', 'node'],
+		github: 'https://github.com/RyanCallahan312/chat-app',
+		demo: 'http://chat-room.bsucomputerscienceclub.com/',
 	},
 ];
