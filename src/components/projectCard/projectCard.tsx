@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { IProjectInfo, projectMappings } from '@constants/projectMappings';
+import { useMediaQuery } from 'react-responsive';
 
 import '@styles/projectCard.css';
 
@@ -13,14 +14,19 @@ const ProjectCard: React.FC<Props> = ({ image, base }: Props) => {
 	let projectInfo: IProjectInfo = projectMappings.find(
 		(e) => e.base === base,
 	);
+
+	const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 1424 });
+
 	return (
 		<div
 			className='card-container'
 			style={
-				projectInfo.isPronounced && {
-					transform: 'scale(1.1)',
-					margin: '20px',
-				}
+				projectInfo.isPronounced && isDesktopOrLaptop
+					? {
+							transform: 'scale(1.1)',
+							margin: '20px',
+					  }
+					: {}
 			}>
 			<div className='card-image'>
 				<GatsbyImage
@@ -42,7 +48,9 @@ const ProjectCard: React.FC<Props> = ({ image, base }: Props) => {
 					</h1>
 				</div>
 				<div className='card-description-container'>
-				<p className='card-description'>{projectInfo.description}</p>
+					<p className='card-description'>
+						{projectInfo.description}
+					</p>
 				</div>
 			</div>
 		</div>

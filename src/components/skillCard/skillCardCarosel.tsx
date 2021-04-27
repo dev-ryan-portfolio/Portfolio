@@ -3,21 +3,51 @@ import '@styles/skillCardCarosel.css';
 import { navigate } from 'gatsby';
 import { cardToTagMap } from '@constants/cardToTagMap';
 import { useMediaQuery } from 'react-responsive';
+import { useStaticQuery, graphql } from 'gatsby';
 
+interface ArrowQuery {
+	allFile: {
+		nodes: [
+			{
+				publicURL: string;
+			},
+		];
+	};
+}
 interface Props {
 	cardPaths: Array<string>;
 }
 
 const SkillCardCarosel: React.FC<Props> = (props: Props) => {
+	const arrow: ArrowQuery = useStaticQuery(graphql`
+	{
+		allFile(filter: {relativeDirectory: {eq: ""}, name: {eq: "arrow"} }) {
+			nodes {
+				publicURL
+			}
+		}
+	}
+	`);
+
 	const { cardPaths } = props;
 
 	const [selected, setSelected] = React.useState(0);
 	const [filteredPaths, setFilteredPaths] = React.useState([]);
 
-	const handleClick = React.useCallback((index: number): void => {
+	const handleCardClick = React.useCallback((index: number): void => {
 		setSelected(() => (selected == index ? -1 : index));
 		navigate(`/projects?tags=${encodeURI(cardToTagMap[index])}#search`);
 	}, []);
+
+	const handleArrowClick: Function = (direction: number) => {
+		if (selected === 0 && direction === -1) {
+			setSelected(filteredPaths.length-1);
+		} else if (selected == filteredPaths.length-1 && direction == 1) {
+			setSelected(0);
+		} else {
+			setSelected((selected) => selected + direction);
+		}
+	};
 
 	React.useEffect(() => {
 		let tempFilteredPaths = [];
@@ -33,19 +63,27 @@ const SkillCardCarosel: React.FC<Props> = (props: Props) => {
 
 	return (
 		<div className='skill-card-list-container'>
-			{
-				//arrow left
-			}
+			<button className='noshow' onClick={() => handleArrowClick(-1)}>
+				<img
+					src={arrow.allFile.nodes[0].publicURL}
+					className='arrow left'
+					alt='left arrow'
+				/>
+			</button>
 			<img
 				src={filteredPaths[selected]}
 				alt='Skill Card'
 				width={smallScreen ? 280 : 200}
 				className={`skill-card-list`}
-				onClick={() => handleClick(selected)}
+				onClick={() => handleCardClick(selected)}
 			/>
-			{
-				//arrow right
-			}
+			<button className='noshow' onClick={() => handleArrowClick(1)}>
+				<img
+					src={arrow.allFile.nodes[0].publicURL}
+					className='right arrow'
+					alt='right arrow'
+				/>
+			</button>
 		</div>
 	);
 };

@@ -6,3 +6,57 @@ div.skill-card-list-container {
 	align-items: center;
 	align-content: stretch;
 }
+
+img.arrow {
+	height: 120px;
+	color: #536095;
+	margin: 0px;
+}
+
+img.right:active {
+	animation-timing-function: ease-in;
+	animation-name: right-shake;
+	animation-duration: 250ms;
+}
+
+img.left {
+	transform: scaleX(-1);
+}
+
+img.left:active {
+	animation-timing-function: ease-in;
+	animation-name: left-shake;
+	animation-duration: 250ms;
+}
+
+button.noshow {
+	color: transparent;
+	background-color: transparent;
+	border: none;
+	display: flex;
+	align-items: center;
+}
+
+@keyframes left-shake {
+	0% {
+		transform: scaleX(-1) translate(0);
+	}
+	70% {
+		transform: scaleX(-1) translate(8px, 0px);
+	}
+	100% {
+		transform: scaleX(-1) translate(0);
+	}
+}
+
+@keyframes right-shake {
+	0% {
+		transform: translate(0);
+	}
+	70% {
+		transform: translate(8px, 0px);
+	}
+	100% {
+		transform: translate(0);
+	}
+}
