@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import ProjectCard from '@components/ProjectCard/projectCard';
 
+import {Icons} from '@types'
 import '@styles/topProjects.css';
 
 interface TopProjectsImages {
@@ -11,9 +12,13 @@ interface TopProjectsImages {
 	};
 }
 
-interface Props {}
 
-const TopProjects: React.FC = (props: Props) => {
+interface Props {
+	icons: Icons
+}
+
+
+const TopProjects: React.FC<Props> = ({icons}) => {
 	const data: TopProjectsImages = useStaticQuery(graphql`
     {
         allFile(
@@ -36,6 +41,7 @@ const TopProjects: React.FC = (props: Props) => {
 		(e: { childImageSharp: IGatsbyImageData; base: string }, index: number) => {
 			return (
 				<ProjectCard
+                    icons={icons}
 					image={getImage(e.childImageSharp)}
                     base={e.base}
                     key={e.base}

@@ -3,39 +3,22 @@ import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import { IProjectInfo, projectMappings } from '@constants/projectMappings';
 import { useMediaQuery } from 'react-responsive';
+import {Icons} from '@types'
 
 import '@styles/projectCard.css';
-
-interface Icons {
-	allFile: {
-		nodes: [{ publicURL: string; name: string }];
-	};
-}
 
 interface Props {
 	image: IGatsbyImageData;
 	base: string;
+	icons: Icons;
 }
 
-const ProjectCard: React.FC<Props> = ({ image, base }: Props) => {
+const ProjectCard: React.FC<Props> = ({ icons, image, base }: Props) => {
 	let projectInfo: IProjectInfo = projectMappings.find(
 		(e) => e.base === base,
 	);
 
 	const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 1424 });
-
-	const icons: Icons = useStaticQuery(graphql`
-	{
-		allFile(
-			filter: {relativeDirectory: {eq: "icons"}, name: {in: ["eye-white", "git-white", "no-eye-white"]}}
-		) {
-			nodes {
-				publicURL
-				name
-			}
-		}
-	}
-	`);
 
 	return (
 		<div

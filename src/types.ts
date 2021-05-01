@@ -10,3 +10,9 @@ export interface HeaderData {
 		};
 	};
 }
+
+export interface Icons {
+	allFile: {
+		nodes: [{ publicURL: string; name: string }];
+	};
+}
