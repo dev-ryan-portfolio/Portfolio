@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+	pathPrefix: "/reponame",
 	siteMetadata: {
 		title: `Dev Ryan Portfolio`,
 		description: `I'm Dev Ryan and I'm looking for 2021 Summer Internships!`,
