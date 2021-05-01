@@ -1,14 +1,43 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import Layout from '@components/common/defaultLayout';
 import SEO from '@components/common/seo';
+interface ResumeImage {
+	allFile: {
+		nodes: [{ childImageSharp: IGatsbyImageData; base: string }];
+	};
+}
 
-const Resume: React.FC = () => (
-	<Layout>
-		<SEO title='Resume' />
-		<iframe src="/resume.pdf" width="50%" height="100%"/>
-	</Layout>
-);
+const Resume: React.FC = () => {
+	const data: ResumeImage = useStaticQuery(graphql`
+    {
+        allFile(
+        filter: {relativeDirectory: {eq: "resume"}, base: {eq: "Resume.jpg"}}
+        ) {
+            nodes {
+                childImageSharp {
+                    gatsbyImageData(
+                        placeholder: BLURRED
+                        formats: [AUTO, WEBP, AVIF]
+                    )
+                }
+                base
+            }
+        }
+    }
+    `);
+	return (
+		<Layout>
+			<SEO title='Resume' />
+			<GatsbyImage
+				image={getImage(data.allFile.nodes[0].childImageSharp)}
+				style={{ width: '50%' }}
+				alt="my resume"
+			/>
+		</Layout>
+	);
+};
 
 export default Resume;
