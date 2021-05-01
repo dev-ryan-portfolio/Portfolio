@@ -12,7 +12,7 @@ export interface IProjectInfo {
 export const projectMappings: Array<IProjectInfo> = [
 	{
 		name: 'Losing The Lyrics',
-		description: `A web based jackbox style game inspired by tv show Don't Forget The Lyrics. Powered by React with Next.js, Socket.io, and Spotify Web Playback SDK.`,
+		description: `A web based jackbox style game inspired by the 2007 tv show 'Don't Forget The Lyrics'. Powered by React with Next.js, Socket.io, and Spotify Web Playback SDK.`,
 		base: 'losing-the-lyrics-proj.png',
 		displayTags: ['React', 'Next.js', 'Socket.io'],
 		hiddenTags: ['react', 'redux', 'node'],

@@ -7,9 +7,7 @@ import SEO from '@components/common/seo';
 const Blog: React.FC = () => (
 	<Layout>
 		<SEO title='Blog' />
-		<h1>Hi from the Blog page</h1>
-		<p>Welcome to page 2</p>
-		<Link to='/'>Go back to the homepage</Link>
+		<h1>Coming Soon</h1>
 	</Layout>
 );
 

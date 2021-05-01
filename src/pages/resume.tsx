@@ -7,9 +7,7 @@ import SEO from '@components/common/seo';
 const Resume: React.FC = () => (
 	<Layout>
 		<SEO title='Resume' />
-		<h1>Hi from the Resume page</h1>
-		<p>Welcome to page 2</p>
-		<Link to='/'>Go back to the homepage</Link>
+		<iframe src="/resume.pdf" width="50%" height="100%"/>
 	</Layout>
 );
 

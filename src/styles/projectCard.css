@@ -61,10 +61,25 @@ p.card-description {
 }
 
 div.demo-github-links {
-	position: absolute;
+	position: relative;
 }
 
-a.demo-link {
+a.git-link {
+	position: absolute;
 	padding: 5px;
 	margin: 0px;
+	bottom: -5px;
+	right: 40px;
+}
+
+a.eye-link {
+	position: absolute;
+	padding: 5px;
+	margin: 0px;
+	bottom: -5px;
+	right: 0px;
+}
+
+img.demo-icon {
+	margin: 0;
 }

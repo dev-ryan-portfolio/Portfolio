@@ -58,25 +58,26 @@ const ProjectCard: React.FC<Props> = ({ icons, image, base }: Props) => {
 			</div>
 			<div className='demo-github-links'>
 				<a
-					className='demo-link'
+					className='git-link'
 					href={projectInfo.github}
 					target='_blank'>
 					<img
-						width='32px'
+						width='30px'
 						src={
 							icons.allFile.nodes.find(
 								(element) => element.name === 'git-white',
 							).publicURL
 						}
+						className="demo-icon"
 						alt='github repo link'
 					/>
 				</a>
 				<a
-					className='demo-link'
+					className='eye-link'
 					href={projectInfo.demo}
 					target='_blank'>
 					<img
-						width='32px'
+						width='30px'
 						src={
 							icons.allFile.nodes.find((element) =>
 								projectInfo.demo
@@ -92,6 +93,7 @@ const ProjectCard: React.FC<Props> = ({ icons, image, base }: Props) => {
 										opacity: 0.5,
 								  }
 						}
+						className="demo-icon"
 						alt='project demo link'
 					/>
 				</a>
