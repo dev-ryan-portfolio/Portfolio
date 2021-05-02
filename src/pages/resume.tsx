@@ -4,6 +4,7 @@ import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import Layout from '@components/common/defaultLayout';
 import SEO from '@components/common/seo';
+import '@styles/resume.css';
 interface ResumeImage {
 	allFile: {
 		nodes: [{ childImageSharp: IGatsbyImageData; base: string }];
@@ -33,8 +34,8 @@ const Resume: React.FC = () => {
 			<SEO title='Resume' />
 			<GatsbyImage
 				image={getImage(data.allFile.nodes[0].childImageSharp)}
-				style={{ width: '50%' }}
-				alt="my resume"
+				className='resume-img'
+				alt='my resume'
 			/>
 		</Layout>
 	);

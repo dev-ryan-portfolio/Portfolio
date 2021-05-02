@@ -1,8 +1,9 @@
 header.nav-container {
 	background-color: #252834;
 	position: sticky;
-	top: 0;
+	top: -1px;
 	width: 100%;
+	z-index: 9999;
 }
 
 header.nav-container > nav {
@@ -37,7 +38,7 @@ header.nav-container > nav > ul > li {
 
 a.logo-link {
 	display: inline-block;
-	padding: 5px 5px 0px 5px;
+	padding-left: 5px;
 	width: 70px;
 }
 

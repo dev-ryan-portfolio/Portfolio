@@ -39,7 +39,6 @@ const ProjectCard: React.FC<Props> = ({ icons, image, base }: Props) => {
 					style={{
 						width: '100%',
 						height: '100%',
-						borderRadius: '9px 9px 0px 0px',
 					}}
 				/>
 			</div>

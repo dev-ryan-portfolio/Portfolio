@@ -3,6 +3,7 @@ div.card-container {
 	margin: 8px;
 	background-color: #536095;
 	width: 25em;
+	overflow: hidden;
 }
 
 div.card-image {
