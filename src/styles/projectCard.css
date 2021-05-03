@@ -2,12 +2,12 @@ div.card-container {
 	border-radius: 9px;
 	margin: 8px;
 	background-color: #536095;
-	width: 25em;
+	width: clamp(350px, 30vw, 450px);
 	overflow: hidden;
 }
 
 div.card-image {
-	height: 25em;
+	height: clamp(350px, 30vw, 450px);
 	margin-bottom: 0px;
 }
 
@@ -18,26 +18,27 @@ div.card-title-with-tags {
 	justify-content: space-between;
 	align-items: baseline;
 	align-content: stretch;
-	margin-bottom: 0px;
-	height: 20%;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	height: 1em;
 }
 
 div.card-text {
 	margin: 10px;
 	text-align: left;
 	color: #ffffff;
-	height: 8em;
+	height: auto;
 }
 
 h1.card-title {
-	font-size: clamp(10pt, 1.2em, 28pt);
+	font-size: clamp(10pt, 1em, 28pt);
 	font-family: 'Nunito Sans';
 	margin-bottom: 0px;
 	letter-spacing: 1px;
 }
 
 h1.card-tags {
-	font-size: clamp(10pt, 1em, 28pt);
+	font-size: clamp(10pt, .9em, 28pt);
 	color: #e5e5e5;
 	font-style: italic;
 	font-family: 'Nunito Sans';
@@ -59,28 +60,23 @@ p.card-description {
 	font-size: clamp(8pt, 1em, 25pt);
 	font-family: 'Nunito Sans';
 	margin: 0px;
+	line-height: 1.2;
 }
 
-div.demo-github-links {
-	position: relative;
+p.demo-github-links {
+	color: #ffffff;
+	font-family: 'Nunito Sans';
+	display: inline;
 }
 
-a.git-link {
-	position: absolute;
-	padding: 5px;
-	margin: 0px;
-	bottom: -5px;
-	right: 40px;
+a.git-demo-link {
+	margin: 0px 1ch;
+	color: #ffffff;
+	text-decoration: none;
+	font-style: italic;
+	font-family: 'Nunito Sans';
 }
-
-a.eye-link {
-	position: absolute;
-	padding: 5px;
-	margin: 0px;
-	bottom: -5px;
-	right: 0px;
-}
-
-img.demo-icon {
-	margin: 0;
+a.git-demo-link:hover {
+	text-decoration: underline;
+	color: #5da9ff;
 }

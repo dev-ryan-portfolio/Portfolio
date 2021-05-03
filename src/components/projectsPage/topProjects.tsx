@@ -14,15 +14,15 @@ interface TopProjectsImages {
 
 
 interface Props {
-	icons: Icons
 }
 
 
-const TopProjects: React.FC<Props> = ({icons}) => {
+const TopProjects: React.FC<Props> = (props: Props) => {
 	const data: TopProjectsImages = useStaticQuery(graphql`
     {
         allFile(
         filter: {relativeDirectory: {eq: "projects"}, base: {in: ["chat-app-proj.png", "highlight-inator-proj.png", "losing-the-lyrics-proj.png"]}}
+        sort: {fields: base}
         ) {
             nodes {
                 childImageSharp {
@@ -41,7 +41,6 @@ const TopProjects: React.FC<Props> = ({icons}) => {
 		(e: { childImageSharp: IGatsbyImageData; base: string }, index: number) => {
 			return (
 				<ProjectCard
-                    icons={icons}
 					image={getImage(e.childImageSharp)}
                     base={e.base}
                     key={e.base}
