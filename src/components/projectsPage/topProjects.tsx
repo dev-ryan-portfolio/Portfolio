@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import ProjectCard from '@components/ProjectCard/projectCard';
 
 import {Icons} from '@types'

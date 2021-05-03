@@ -1,0 +1,14 @@
+ul.contact-list {
+	margin: 0px 30%;
+}
+
+li.contact-item {
+	padding: 3em;
+	list-style: none;
+}
+
+a.contact-link {
+	font-family: 'Roboto';
+	color: #ffffff;
+	font-size: 3em;
+}

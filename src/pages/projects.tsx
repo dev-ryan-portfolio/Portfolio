@@ -4,8 +4,13 @@ import { graphql } from 'gatsby';
 import Layout from '@components/common/defaultLayout';
 import SEO from '@components/common/seo';
 import TopProjects from '@components/projectsPage/topProjects';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 import '@styles/projects.css';
-
+interface TopProjectsImages {
+	allFile: {
+		nodes: [{ childImageSharp: IGatsbyImageData; publicUrl: string }];
+	};
+}
 interface Props{
 }
 const Projects: React.FC<Props> = () => {
