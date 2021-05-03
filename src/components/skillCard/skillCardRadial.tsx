@@ -2,6 +2,7 @@ import * as React from 'react';
 import '@styles/skillCardRadial.css';
 import { navigate } from 'gatsby';
 import { cardToTagMap } from '@constants/cardToTagMap';
+import { useMediaQuery } from 'react-responsive';
 
 interface Props {
 	cardPaths: Array<string>;
@@ -19,6 +20,9 @@ const SkillCardRadial: React.FC<Props> = (props: Props) => {
 			750,
 		);
 	}, []);
+	
+
+	const isLaptop = useMediaQuery({ minDeviceWidth: 1441 });
 
 	React.useEffect(() => {
 		let tempFilteredPaths = [];
@@ -40,13 +44,20 @@ const SkillCardRadial: React.FC<Props> = (props: Props) => {
 		filteredPaths &&
 		filteredPaths.map((imagePath: string, i: number) => {
 			let x: number = 700 * ((2 * i) / 12 - 1);
-			let y: number = ellipse(x);
+			let y: number;
+			if(isLaptop){
+				y= ellipse(x);
+			}else{
+				y = ellipse(x*.9) - 70;
+				x=x*.8;
+			}
 			return (
 				<img
 					key={imagePath.slice(-15) + i}
 					src={imagePath}
 					alt='Skill Card'
-					width={200}
+					
+					width={isLaptop ? 200 : 150}
 					className={`skill-card ${
 						selected == i && ' skill-card-selected'
 					}`}

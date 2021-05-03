@@ -31,7 +31,7 @@ const IndexPage: React.FC = () => {
 
 	const cardPaths = data.allFile.nodes.map((node) => node.publicURL);
 
-	const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 1224 });
+	const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 1024 });
 
 	return (
 		<Layout>
