@@ -21,7 +21,7 @@ const contactLinks: React.FC<Props> = (props: Props) => {
 	const contactIcons: ContactIcons = useStaticQuery(graphql`
     {
         allFile(
-            filter: {relativeDirectory: {eq: "icons"}, base: {in: ["github-mark.svg", "gmail.svg", "linkedin.png"]}}
+            filter: {relativeDirectory: {eq: "icons"}, base: {in: ["github-mark-white.svg", "gmail.svg", "linkedin.png"]}}
             sort: {fields: base}
         ) {
             nodes {
@@ -51,7 +51,6 @@ const contactLinks: React.FC<Props> = (props: Props) => {
 	};
 
 	const links: JSX.Element[] = contactIcons.allFile.nodes.map((e) => {
-        console.log(e.publicURL)
 		return (
 			<li className='contact-item'>
 				<a

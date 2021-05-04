@@ -31,11 +31,16 @@ const Contact: React.FC = () => {
 		<Layout>
 			<SEO title='Contact' />
 			<div className='contact-container'>
-				<GatsbyImage
-					image={getImage(avatar.allFile.nodes[0].childImageSharp)}
-					alt='bitmoji avatar'
-				/>
-				<ContactLinks/>
+				<div>
+					<GatsbyImage
+						image={getImage(
+							avatar.allFile.nodes[0].childImageSharp,
+						)}
+						alt='bitmoji avatar'
+					/>
+					<h1 className='contact-header'>Say Hello 🙌</h1>
+				</div>
+				<ContactLinks />
 			</div>
 		</Layout>
 	);
