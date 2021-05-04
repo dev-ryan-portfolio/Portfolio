@@ -5,14 +5,14 @@ ul.contact-list {
 	justify-content: space-around;
 	align-items: center;
 	align-content: stretch;
-	width: clamp(230px,50%,550px);
-	margin:0%
+	width: clamp(230px, 50%, 550px);
+	margin: 0%;
 }
 
 li.contact-item {
 	list-style: none;
-	width:64px;
-	height:64px;
+	width: 64px;
+	height: 64px;
 }
 
 a.contact-link {

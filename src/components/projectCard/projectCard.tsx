@@ -31,15 +31,17 @@ const ProjectCard: React.FC<Props> = ({ image, base }: Props) => {
 					: {}
 			}>
 			<div className='card-image'>
-				<GatsbyImage
-					key={projectInfo.description}
-					image={getImage(image)}
-					alt={projectInfo.description}
-					style={{
-						width: '100%',
-						height: '100%',
-					}}
-				/>
+				<a href={projectInfo.github} target='_blank'>
+					<GatsbyImage
+						key={projectInfo.description}
+						image={getImage(image)}
+						alt={projectInfo.description}
+						style={{
+							width: '100%',
+							height: '100%',
+						}}
+					/>
+				</a>
 			</div>
 			<div className='card-text'>
 				<div className='card-title-with-tags'>

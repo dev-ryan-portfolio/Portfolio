@@ -52,7 +52,7 @@ const contactLinks: React.FC<Props> = (props: Props) => {
 
 	const links: JSX.Element[] = contactIcons.allFile.nodes.map((e) => {
 		return (
-			<li className='contact-item'>
+			<li className='contact-item' key={e.name}>
 				<a
 					className='contact-link'
 					href={contactIconToUrlMap.get(e.name)}
