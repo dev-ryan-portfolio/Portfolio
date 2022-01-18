@@ -1,16 +1,29 @@
 .resume-img {
 	width: 50%;
+	height: 95%;
 }
 
+.resume-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+}
 
 @media only screen and (max-width: 800px) {
 	.resume-img {
 		width: 70%;
+		height: 95%;
 	}
 }
 
 @media only screen and (max-width: 450px) {
 	.resume-img {
-		width: 90%;
+		width: 80%;
+		height: 60%;
 	}
 }
