@@ -1,0 +1,2 @@
+(self.webpackChunkdev_ryan_portfolio=self.webpackChunkdev_ryan_portfolio||[]).push([[218],{938:function(e,t,n){"use strict";n.r(t);var l=n(7294),u=n(3609),o=n(8362);t.default=function(){return l.createElement(u.Z,null,l.createElement(o.Z,{title:"404: Not found"}),l.createElement("h1",null,"404: Not Found"),l.createElement("p",null,"You just hit a route that doesn't exist... the sadness."))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-44cc5bc210f3423bf148.js.map

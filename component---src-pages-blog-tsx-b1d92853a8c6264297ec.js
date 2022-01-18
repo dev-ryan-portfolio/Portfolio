@@ -1,0 +1,2 @@
+(self.webpackChunkdev_ryan_portfolio=self.webpackChunkdev_ryan_portfolio||[]).push([[410],{5466:function(e,n,t){"use strict";t.r(n);var l=t(7294),o=t(3609),r=t(8362);n.default=function(){return l.createElement(o.Z,null,l.createElement(r.Z,{title:"Blog"}),l.createElement("h1",null,"Coming Soon"))}}}]);
+//# sourceMappingURL=component---src-pages-blog-tsx-b1d92853a8c6264297ec.js.map
