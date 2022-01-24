@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-	pathPrefix: "/Portfolio",
+	pathPrefix: '/Portfolio',
 	siteMetadata: {
 		title: `Dev Ryan Portfolio`,
 		description: `I'm Dev Ryan and I'm looking for 2021 Summer Internships!`,
@@ -40,7 +40,7 @@ module.exports = {
 						family: 'Roboto',
 					},
 					{
-						family: 'Nunito Sans'
+						family: 'Nunito Sans',
 					},
 				],
 			},

@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useMediaQuery } from 'react-responsive';
+import { gsap } from 'gsap';
 
 import Layout from '@components/common/defaultLayout';
 import SEO from '@components/common/seo';
 import SkillCardRadial from '@components/skillCard/skillCardRadial';
 import SkillCardCarosel from '@components/skillCard/skillCardCarosel';
 import '@styles/index.css';
+import Loader from '@components/animations/loader';
+import { Dispatch, SetStateAction } from 'react';
 
 interface CardUrlQuery {
 	allFile: {
@@ -19,6 +22,8 @@ interface CardUrlQuery {
 }
 
 const IndexPage: React.FC = () => {
+	const animationWrapper: React.RefObject<HTMLDivElement> = React.useRef<HTMLDivElement>();
+
 	const data: CardUrlQuery = useStaticQuery(graphql`
 	{
 		allFile(filter: {relativeDirectory: {eq: "skillCards"}}, sort: {fields: name}) {
@@ -33,7 +38,19 @@ const IndexPage: React.FC = () => {
 
 	const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 1024 });
 
-	return (
+	const [isLoading, setIsLoading] = React.useState<
+		boolean | Dispatch<SetStateAction<boolean>>
+	>(true);
+
+	const skillCards = isDesktopOrLaptop ? (
+		<SkillCardRadial cardPaths={cardPaths} />
+	) : (
+		<SkillCardCarosel cardPaths={cardPaths} />
+	);
+
+	return isLoading ? (
+		<Loader ref={animationWrapper} />
+	) : (
 		<Layout>
 			<SEO title='Home' />
 			<div className='headline-grid-container'>
@@ -43,12 +60,8 @@ const IndexPage: React.FC = () => {
 					<h3 className='index-header'>
 						with a lot of cards in my hand
 					</h3>
+					{skillCards}
 				</div>
-				{isDesktopOrLaptop ? (
-					<SkillCardRadial cardPaths={cardPaths} />
-				) : (
-					<SkillCardCarosel cardPaths={cardPaths} />
-				)}
 			</div>
 		</Layout>
 	);
