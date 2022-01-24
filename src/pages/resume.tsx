@@ -10,7 +10,7 @@ const Resume: React.FC = () => {
 			<SEO title='Resume' />
 			<div className='resume-container'>
 				<iframe
-					src='https://drive.google.com/file/d/1KX1R2xiUxTOGP0--Sk69GoNK3EfBf5xO/preview'
+					src='https://drive.google.com/file/d/1S5hmxrJTeMhR4FDXGyCfCOmVCuzMEJf-/preview'
 					className='resume-img'
 					allow='autoplay'></iframe>
 			</div>
